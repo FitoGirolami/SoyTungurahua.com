@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Soy Tungurahua: red abierta de cultura, turismo consciente y valor territorial de la provincia de Tungurahua.">
+  <title>Soy Tungurahua</title>
+  <style>
+    :root{--bg:#fffaf2;--ink:#24211d;--accent:#ff6b35;--gold:#f4b942;--green:#2f8f5b;--card:#ffffff;--muted:#6f6a63}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    header{padding:1.2rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e1d5;background:rgba(255,250,242,.96);position:sticky;top:0}
+    .brand{font-weight:800;letter-spacing:.04em}.brand span{color:var(--accent)}
+    nav a{color:var(--ink);text-decoration:none;margin-left:1rem;font-size:.95rem}
+    .hero{min-height:74vh;display:grid;place-items:center;text-align:center;padding:5rem 6vw;background:linear-gradient(135deg,#fff3df,#f7f4e9)}
+    .hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;margin:0}.hero h1 span{color:var(--accent)}
+    .hero p{max-width:760px;margin:1.5rem auto;font-size:1.2rem;color:var(--muted)}
+    .btn{display:inline-block;background:var(--accent);color:white;text-decoration:none;padding:.9rem 1.3rem;border-radius:999px;font-weight:700;margin:.3rem}
+    .btn.alt{background:var(--green)}
+    section{padding:4.5rem 6vw;max-width:1200px;margin:auto}h2{font-size:clamp(2rem,4vw,3.2rem);margin-top:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{background:var(--card);padding:1.4rem;border-radius:18px;border:1px solid #ebe2d6}
+    .statement{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:800;text-align:center}.highlight{color:var(--green)}
+    footer{padding:3rem 6vw;background:#24211d;color:#fff;text-align:center}.small{font-size:.9rem;color:#bfb7ac}
+    @media(max-width:720px){nav{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">SOY <span>TUNGURAHUA</span></div>
+  <nav><a href="#que-es">Qué es</a><a href="#participa">Participa</a><a href="#explora">Explora</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <div class="brand">RED DE CULTURA · TURISMO CONSCIENTE · VALOR TERRITORIAL</div>
+      <h1>SOY <span>TUNGURAHUA</span></h1>
+      <p>Una red abierta para conectar a quienes crean, cuidan, investigan, producen, interpretan y comparten valor desde el territorio.</p>
+      <a class="btn" href="#participa">Quiero ser parte</a>
+      <a class="btn alt" href="#explora">Conocer el proyecto</a>
+    </div>
+  </section>
+
+  <section id="que-es">
+    <h2>Una red abierta para quienes hacen territorio</h2>
+    <p>Soy Tungurahua nace para visibilizar y conectar artistas, artesanos, museos, espacios culturales, productores, comunidades, investigadores, proyectos gastronómicos, alojamientos, guías, iniciativas ambientales, educativas y emprendimientos que aportan valor real a la provincia.</p>
+    <p class="statement">No importa de qué organización vienes. <span class="highlight">Importa qué valor aportas al territorio.</span></p>
+  </section>
+
+  <section id="participa">
+    <h2>No necesitas que nadie te invite</h2>
+    <div class="grid">
+      <div class="card"><strong>1. Cuéntanos quién eres</strong><br>Presenta tu proyecto, actividad o iniciativa.</div>
+      <div class="card"><strong>2. Verificamos la información</strong><br>Confirmamos que el proyecto existe y que sus datos sean correctos.</div>
+      <div class="card"><strong>3. Aceptas los principios</strong><br>Transparencia, respeto, colaboración, identidad y sostenibilidad.</div>
+      <div class="card"><strong>4. Entras a la red</strong><br>Tu perfil podrá integrarse al directorio, mapa, rutas y oportunidades.</div>
+    </div>
+  </section>
+
+  <section id="explora">
+    <h2>¿Qué estamos construyendo?</h2>
+    <div class="grid">
+      <div class="card"><strong>Mapa Soy Tungurahua</strong><br>Actores, proyectos y experiencias organizados por cantón y actividad.</div>
+      <div class="card"><strong>Soy Tungurahua Pass</strong><br>Beneficios, cortesías, promociones y experiencias para residentes y viajeros.</div>
+      <div class="card"><strong>Rutas con sentido</strong><br>Recorridos culturales, artesanales, gastronómicos, ambientales y comunitarios.</div>
+      <div class="card"><strong>Agenda</strong><br>Actividades, encuentros y oportunidades en los nueve cantones.</div>
+      <div class="card"><strong>Investigación</strong><br>Datos, mapas e informes para comprender y fortalecer el territorio.</div>
+      <div class="card"><strong>Aliados</strong><br>Empresas, universidades, medios y organizaciones que quieran sumar oportunidades.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Los nueve cantones, una red</h2>
+    <p>Ambato · Baños de Agua Santa · Cevallos · Mocha · Patate · Pelileo · Quero · Tisaleo · Santiago de Píllaro</p>
+    <p class="statement">Soy Tungurahua porque creo. Porque produzco. Porque cuido. Porque investigo. Porque comparto. <span class="highlight">Porque hago territorio.</span></p>
+  </section>
+</main>
+<footer>
+  <strong>SOY TUNGURAHUA</strong><br>
+  Red de Cultura, Turismo Consciente y Valor Territorial
+  <div class="small">Conectamos a quienes crean valor desde el territorio.</div>
+</footer>
+</body>
+</html>
