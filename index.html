@@ -27,26 +27,33 @@
   <link rel="icon" href="assets/favicon-soy-tungurahua.jpg" type="image/jpeg">
   <style>
     :root{
-      --cream:#fff9f0;--white:#fff;--ink:#22323a;--muted:#626b66;--line:#eadccc;
-      --orange:#f26b3a;--green:#2f8f5b;--dark:#1f2824;--yellow:#ffd56f;
+      --cream:#fff9f0;
+      --white:#fff;
+      --ink:#22323a;
+      --muted:#626b66;
+      --line:#eadccc;
+      --orange:#f26b3a;
+      --green:#2f8f5b;
+      --dark:#1f2824;
+      --yellow:#ffd56f;
       --shadow:0 18px 45px rgba(34,50,58,.10);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
     img{max-width:100%;display:block}
     a{color:inherit}
     .wrap{width:min(1180px,92vw);margin:auto}
     .eyebrow{font-size:.76rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.9rem 1.05rem;border-radius:999px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s ease;min-height:48px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.92rem 1.08rem;border-radius:999px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s ease;min-height:50px;text-align:center;white-space:normal;line-height:1.2}
     .btn:hover{transform:translateY(-2px)}
     .btn.orange{background:var(--orange);color:#fff}
     .btn.green{background:var(--green);color:#fff}
     .btn.light{background:#fff;border-color:var(--line)}
 
-    header{position:sticky;top:0;z-index:60;background:rgba(255,249,240,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,220,204,.92)}
+    header{position:sticky;top:0;z-index:60;background:rgba(255,249,240,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,220,204,.92)}
     .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;min-width:0}
+    .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;min-width:0;flex:1}
     .mark{width:52px;height:52px;border-radius:16px;background:#fff url('assets/logo-soy-tungurahua.jpg') center 27%/185% auto no-repeat;border:1px solid var(--line);flex:0 0 auto}
     .brand-copy{line-height:1.06;min-width:0}
     .brand-copy strong{display:block;font-size:1rem;letter-spacing:.02em}
@@ -132,28 +139,68 @@
 
     @media (max-width:760px){
       .wrap{width:min(100%,92vw)}
-      header{position:sticky}
-      .nav{min-height:72px}
+      .nav{min-height:72px;gap:.75rem}
+      .brand{gap:.7rem}
+      .mark{width:44px;height:44px;border-radius:14px}
+      .brand-copy strong{font-size:.94rem}
       .brand-copy small{display:none}
+      .links{gap:.35rem}
       .links a:not(.go){display:none}
-      .hero{padding:3.6rem 0 2.2rem}
-      h1{font-size:clamp(2.7rem,13vw,4.3rem)}
+      .links .go{padding:.75rem .95rem;font-size:.95rem;min-height:44px}
+      .hero{padding:3rem 0 2rem}
+      .eyebrow{font-size:.7rem;letter-spacing:.12em}
+      h1{font-size:clamp(2.65rem,13vw,4.2rem);line-height:.9}
       .lead{font-size:1rem}
       .hero-actions{display:grid;grid-template-columns:1fr;gap:.7rem}
-      .hero-actions .btn{width:100%}
+      .hero-actions .btn{width:100%;font-size:.98rem;padding:1rem .9rem}
       .picker{padding:.95rem}
       .cantons,.routegrid,.listen{grid-template-columns:1fr}
       .canton,.route,.q{min-height:auto}
-      .section{padding:3.6rem 0}
+      .section{padding:3.4rem 0}
       .mapbox{min-height:240px}
       .copy,.card,.joinbox{padding:1.2rem}
       .mobile-dock{
-        display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;
-        background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:20px;padding:.5rem;box-shadow:0 16px 30px rgba(0,0,0,.14);backdrop-filter:blur(10px)
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:.4rem;
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:calc(env(safe-area-inset-bottom,0px) + 78px);
+        z-index:70;
+        background:rgba(255,255,255,.98);
+        border:1px solid var(--line);
+        border-radius:20px;
+        padding:.48rem;
+        box-shadow:0 16px 30px rgba(0,0,0,.14);
+        backdrop-filter:blur(10px)
       }
-      .mobile-dock a{text-decoration:none;font-size:.72rem;font-weight:900;text-align:center;padding:.62rem .2rem;border-radius:14px;background:var(--cream);min-height:54px;display:flex;align-items:center;justify-content:center;line-height:1.15}
+      .mobile-dock a{
+        text-decoration:none;
+        font-size:.70rem;
+        font-weight:900;
+        text-align:center;
+        padding:.58rem .15rem;
+        border-radius:14px;
+        background:var(--cream);
+        min-height:52px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        line-height:1.15
+      }
       .mobile-dock a.primary{background:var(--orange);color:#fff}
-      footer{padding-bottom:6.6rem}
+      footer{padding-bottom:11rem}
+    }
+
+    @media (max-width:420px){
+      .wrap{width:min(100%,94vw)}
+      .nav{align-items:center}
+      .brand-copy strong{font-size:.88rem}
+      .links .go{font-size:.9rem;padding:.72rem .85rem}
+      h1{font-size:clamp(2.45rem,12vw,3.5rem)}
+      .hero-actions .btn{font-size:.94rem}
+      .mobile-dock a{font-size:.66rem}
     }
   </style>
 </head>
@@ -171,7 +218,7 @@
         <a href="que-hacer.html">Qué hacer</a>
         <a href="mapa.html">Mapa</a>
         <a href="catastro.html">Catastro</a>
-        <a class="go" href="#participa">Participa</a>
+        <a class="go" href="#participa">Sumarte</a>
       </div>
     </div>
   </header>
@@ -184,9 +231,9 @@
           <h1>¿Qué vas a<br><span>descubrir hoy?</span></h1>
           <p class="lead"><strong>No vengas solo a mirar.</strong> Ven a entender dónde estás. Historias, personas, oficios, sabores, naturaleza y experiencias para recorrer Tungurahua de una forma más cercana, alegre y consciente.</p>
           <div class="hero-actions">
-            <a class="btn orange" href="que-hacer.html">🧭 Qué hacer en Tungurahua</a>
-            <a class="btn green" href="mapa.html">📍 Abrir mapa territorial</a>
-            <a class="btn light" href="#escucha">🎧 Escuchar el territorio</a>
+            <a class="btn orange" href="que-hacer.html">🧭 Qué hacer</a>
+            <a class="btn green" href="mapa.html">📍 Ver mapa</a>
+            <a class="btn light" href="#escucha">🎧 Audioguía</a>
           </div>
           <div class="picker-grid">
             <div class="picker">
@@ -328,7 +375,7 @@
           <div class="eyebrow">El mapa nunca está terminado</div>
           <h2>¿Tú también haces territorio?</h2>
           <p>Si tienes un taller, un espacio cultural, una investigación, un proyecto, un oficio, una experiencia o una historia que aporta valor a Tungurahua, queremos conocerla.</p>
-          <a class="btn orange" href="mailto:contacto@observatorioculturalindependiente.org?subject=Quiero%20participar%20en%20Soy%20Tungurahua">Compartir mi proyecto</a>
+          <a class="btn orange" href="mailto:contacto@observatorioculturalindependiente.org?subject=Quiero%20sumarme%20a%20Soy%20Tungurahua">Compartir mi proyecto</a>
         </div>
         <div class="micro">
           <div><b>🟢 Red abierta</b><span>No necesitas una invitación previa.</span></div>
@@ -342,7 +389,7 @@
   <footer>
     <div class="wrap foot">
       <div><strong>SOY TUNGURAHUA</strong><br><small>Conectamos a quienes crean valor desde el territorio.</small></div>
-      <div><a href="que-hacer.html">Qué hacer</a> · <a href="mapa.html">Mapa</a> · <a href="catastro.html">Catastro</a> · <a href="#participa">Participa</a></div>
+      <div><a href="que-hacer.html">Qué hacer</a> · <a href="mapa.html">Mapa</a> · <a href="catastro.html">Catastro</a> · <a href="#participa">Sumarte</a></div>
     </div>
   </footer>
 
@@ -350,7 +397,7 @@
     <a href="que-hacer.html">🧭<br>Qué hacer</a>
     <a href="mapa.html">📍<br>Mapa</a>
     <a href="catastro.html">🗂️<br>Catastro</a>
-    <a class="primary" href="#participa">✨<br>Participa</a>
+    <a class="primary" href="#participa">✨<br>Sumarte</a>
   </nav>
 </body>
 </html>
