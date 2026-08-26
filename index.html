@@ -1,231 +1,54 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Soy Tungurahua: red abierta de cultura, turismo consciente, historias, audioguías y valor territorial de la provincia de Tungurahua.">
-  <meta name="theme-color" content="#fff8ef">
-  <title>Soy Tungurahua — Cultura, turismo consciente e historias del territorio</title>
-  <style>
-    :root{
-      --bg:#fff8ef;--paper:#ffffff;--ink:#20201d;--muted:#706c65;--line:#e9dfd1;
-      --coral:#ff6941;--gold:#f6bb3b;--green:#2f8d5d;--green-dark:#1f6543;--charcoal:#252522;
-      --radius:24px;--shadow:0 18px 50px rgba(45,38,29,.08)
-    }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-    a{color:inherit}img{max-width:100%}.wrap{width:min(1180px,88vw);margin:auto}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,248,239,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(233,223,209,.8)}
-    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:900;letter-spacing:.02em;font-size:1.05rem}.brand span{color:var(--coral)}
-    nav{display:flex;gap:1.1rem;align-items:center}nav a{text-decoration:none;font-size:.92rem;font-weight:700;color:#4e4a45}.nav-cta{background:var(--charcoal);color:white!important;padding:.65rem 1rem;border-radius:999px}
-    .hero{position:relative;overflow:hidden;padding:7rem 0 5.5rem}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(0);opacity:.45;z-index:-1}.hero:before{width:420px;height:420px;background:#ffd968;right:-110px;top:-150px}.hero:after{width:340px;height:340px;background:#8bd7a9;left:-150px;bottom:-150px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center}.hero h1{font-size:clamp(4rem,10vw,8.5rem);line-height:.82;margin:.5rem 0 1.5rem;letter-spacing:-.065em}.hero h1 span{color:var(--coral)}
-    .lead{font-size:clamp(1.15rem,2.2vw,1.45rem);max-width:760px;color:#4f4b45}.question{font-size:clamp(1.8rem,4vw,3.6rem);font-weight:900;line-height:1.05;margin:1.2rem 0;color:var(--charcoal)}
-    .buttons{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;padding:.9rem 1.25rem;border-radius:999px;font-weight:800;border:1px solid transparent}.btn.primary{background:var(--coral);color:white}.btn.secondary{background:var(--green);color:white}.btn.ghost{border-color:var(--line);background:rgba(255,255,255,.65)}
-    .hero-card{background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:32px;padding:2rem;box-shadow:var(--shadow)}.hero-card .mini{display:grid;gap:.8rem;margin-top:1rem}.mini div{padding:1rem;border-radius:16px;background:#fffaf4;border:1px solid #efe5d8;font-weight:750}
-    .cantons{padding:1rem 0 3.2rem}.cantons-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem}.pill{border:1px solid var(--line);background:white;padding:.55rem .85rem;border-radius:999px;font-size:.88rem;font-weight:700}
-    section{padding:5.8rem 0}.section-head{max-width:780px;margin-bottom:2.2rem}.section-head h2{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;margin:.5rem 0 1rem;letter-spacing:-.045em}.section-head p{font-size:1.08rem;color:var(--muted)}
-    .questions{background:var(--charcoal);color:white}.questions .eyebrow{color:#ffd55b}.questions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.qcard{padding:2rem;border-radius:22px;border:1px solid #44443f;background:#2d2d29;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:850;line-height:1.15}
-    .audio-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:2rem;align-items:stretch}.player{background:linear-gradient(145deg,#ffffff,#f8f1e6);border:1px solid var(--line);padding:2rem;border-radius:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:360px}.player-button{width:82px;height:82px;border-radius:50%;background:var(--coral);color:white;display:grid;place-items:center;font-size:2rem;margin:1.5rem 0}.wave{height:62px;display:flex;align-items:center;gap:5px}.wave i{display:block;width:5px;border-radius:5px;background:var(--green);height:var(--h)}
-    .audio-list{display:grid;gap:1rem}.audio-item{background:white;border:1px solid var(--line);padding:1.2rem 1.3rem;border-radius:18px}.audio-item strong{display:block;font-size:1.05rem}.audio-item span{color:var(--muted);font-size:.92rem}
-    .values{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.value{background:white;border:1px solid var(--line);border-radius:20px;padding:1.5rem}.value b{font-size:1.25rem}.value p{color:var(--muted);margin-bottom:0}
-    .network{background:#fff3e9}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.category{background:white;border-radius:20px;padding:1.4rem;border:1px solid #f0dfcf;font-weight:800}.category small{display:block;color:var(--muted);font-weight:500;margin-top:.35rem}
-    .map-card{border-radius:30px;padding:2rem;background:linear-gradient(135deg,#eaf8ef,#fffdf7);border:1px solid #dcebdd;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center}.map-visual{min-height:330px;border-radius:24px;background:repeating-radial-gradient(circle at 20% 20%,rgba(47,141,93,.15) 0 2px,transparent 2px 28px),linear-gradient(135deg,#d7eedf,#fef3cd);position:relative;overflow:hidden}.pin{position:absolute;width:16px;height:16px;background:var(--coral);border:4px solid white;border-radius:50%;box-shadow:0 3px 9px rgba(0,0,0,.18)}
-    .pass{background:var(--green-dark);color:white}.pass-card{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}.pass-ticket{background:#fff8ef;color:var(--ink);padding:2rem;border-radius:28px;border:2px dashed #f0b56b;box-shadow:var(--shadow)}.pass-ticket h3{font-size:2.1rem;margin:.2rem 0}.benefits{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.benefits span{background:white;border:1px solid #eadcc8;border-radius:999px;padding:.5rem .8rem;font-weight:750;font-size:.9rem}
-    .participate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:steps}.step{background:white;border:1px solid var(--line);border-radius:20px;padding:1.5rem;counter-increment:steps}.step:before{content:counter(steps);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);font-weight:900;margin-bottom:1rem}.step b{font-size:1.1rem}.step p{color:var(--muted)}
-    .open-door{margin-top:2rem;padding:2rem;border-radius:24px;background:#fff0de;border-left:6px solid var(--coral)}.open-door strong{font-size:clamp(1.5rem,3vw,2.4rem)}
-    .allies{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.ally{background:white;padding:1.5rem;border:1px solid var(--line);border-radius:20px}.ally h3{margin-top:0}
-    .closing{text-align:center;padding:7rem 0}.closing h2{font-size:clamp(2.8rem,7vw,6.3rem);line-height:.93;letter-spacing:-.055em;margin:.5rem auto 1rem;max-width:970px}.closing p{max-width:720px;margin:0 auto 2rem;color:var(--muted);font-size:1.15rem}
-    footer{background:#1f1f1c;color:white;padding:3.5rem 0}.footer-grid{display:flex;justify-content:space-between;gap:2rem;align-items:flex-end}.footer-grid p{color:#c8c4bc;margin:.4rem 0}.footer-links{display:flex;gap:1rem;flex-wrap:wrap}.footer-links a{color:white;text-decoration:none;font-size:.92rem}
-    @media(max-width:900px){.hero-grid,.audio-layout,.map-card,.pass-card{grid-template-columns:1fr}.values,.participate-grid{grid-template-columns:repeat(2,1fr)}.category-grid{grid-template-columns:repeat(2,1fr)}.hero-card{display:none}}
-    @media(max-width:680px){nav a:not(.nav-cta){display:none}.questions-grid,.values,.category-grid,.participate-grid,.allies{grid-template-columns:1fr}.hero{padding-top:5rem}.hero h1{font-size:clamp(3.5rem,18vw,5.2rem)}section{padding:4.2rem 0}.footer-grid{align-items:flex-start;flex-direction:column}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soy Tungurahua — Cultura, territorio y aventura consciente</title>
+<meta name="description" content="Soy Tungurahua es una red abierta de cultura, turismo consciente y valor territorial. Explora historias, audioguías, experiencias y actores de los nueve cantones de Tungurahua.">
+<meta name="theme-color" content="#fff9f0">
+<style>
+:root{--cream:#fff9f0;--paper:#fff;--ink:#263238;--muted:#6e716e;--line:#eadfce;--orange:#ff6b35;--gold:#f4b942;--green:#2f8f5b;--lime:#78be20;--dark:#202925;--shadow:0 20px 60px rgba(38,50,56,.10);--r:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(1180px,90vw);margin:auto}.eyebrow{font-size:.76rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}
+header{position:sticky;top:0;z-index:30;background:rgba(255,249,240,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(234,223,206,.8)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brandlock{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:900}.brandlock img{width:54px;height:54px;object-fit:contain;border-radius:14px}.brandtext{line-height:1}.brandtext strong{display:block;font-size:1rem;letter-spacing:.02em}.brandtext small{font-size:.68rem;color:var(--muted);font-weight:700}nav{display:flex;align-items:center;gap:1rem}nav a{text-decoration:none;font-size:.9rem;font-weight:800}.navcta{background:var(--dark);color:#fff;padding:.7rem 1rem;border-radius:999px}
+.hero{position:relative;overflow:hidden;padding:5.5rem 0 4rem}.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,#ffd66a 0 30%,rgba(244,185,66,.14) 65%,transparent 70%);right:-180px;top:-180px;z-index:-1}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}.hero h1{font-size:clamp(3.5rem,8vw,7.4rem);line-height:.86;letter-spacing:-.065em;margin:.5rem 0 1rem}.hero h1 span{color:var(--orange)}.hero .lead{font-size:clamp(1.08rem,2vw,1.35rem);color:#4f5551;max-width:700px}.question{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.03;font-weight:900;margin:1.3rem 0}.buttons{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}.btn{display:inline-flex;text-decoration:none;padding:.9rem 1.2rem;border-radius:999px;font-weight:900;align-items:center;gap:.45rem;border:1px solid transparent}.btn.orange{background:var(--orange);color:#fff}.btn.green{background:var(--green);color:#fff}.btn.light{background:#fff;border-color:var(--line)}.identity-card{background:#fff;border:1px solid var(--line);border-radius:36px;padding:1rem;box-shadow:var(--shadow)}.identity-card img{display:block;width:100%;border-radius:26px}.identity-note{padding:1.2rem 1.3rem}.identity-note strong{font-size:1.12rem}.identity-note p{margin:.35rem 0 0;color:var(--muted)}
+.cantons{padding:0 0 3.2rem}.cantons-row{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.5rem .8rem;font-size:.84rem;font-weight:800}
+.band{background:var(--dark);color:#fff;padding:1.1rem 0}.band .wrap{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:.86rem;font-weight:850;letter-spacing:.03em}.band b{color:#ffd35b}
+section{padding:5.5rem 0}.head{max-width:790px;margin-bottom:2rem}.head h2{font-size:clamp(2.4rem,5vw,4.6rem);line-height:.98;letter-spacing:-.045em;margin:.5rem 0 1rem}.head p{color:var(--muted);font-size:1.08rem}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:1.5rem}.card h3{margin:.2rem 0 .4rem}.card p{color:var(--muted);margin:.25rem 0}
+.adventure{background:linear-gradient(145deg,#edf7ef,#fff8e7)}.manifesto{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:start}.quote{background:#fff;border-radius:32px;padding:2rem;border:1px solid #dce9df;box-shadow:var(--shadow);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;line-height:1.1}.principles{display:grid;gap:.8rem}.principle{background:rgba(255,255,255,.75);border:1px solid #dce8dc;border-radius:18px;padding:1.1rem 1.2rem}.principle b{display:block;margin-bottom:.25rem}.principle span{color:var(--muted)}
+.questions{background:#262e2a;color:#fff}.questions .eyebrow{color:#ffd45e}.qgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.q{background:#303a35;border:1px solid #465049;border-radius:22px;padding:1.8rem;font-size:clamp(1.2rem,2.4vw,1.9rem);line-height:1.15;font-weight:900}
+.audio{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}.player{background:#fff;border:1px solid var(--line);border-radius:30px;padding:2rem;box-shadow:var(--shadow)}.play{width:78px;height:78px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:1.8rem;margin:1.5rem 0}.wave{display:flex;gap:5px;align-items:center;height:60px}.wave i{display:block;width:5px;background:var(--green);border-radius:5px;height:var(--h)}.tracks{display:grid;gap:.8rem}.track{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.1rem}.track strong{display:block}.track span{color:var(--muted);font-size:.9rem}
+.network{background:#fff1e5}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}.cat{background:#fff;border:1px solid #efdcca;border-radius:18px;padding:1.15rem;font-weight:900}.cat small{display:block;font-weight:500;color:var(--muted);margin-top:.25rem}
+.mapbox{background:#fff;border:1px solid var(--line);border-radius:32px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;box-shadow:var(--shadow)}.mapvisual{min-height:320px;border-radius:24px;position:relative;overflow:hidden;background:repeating-radial-gradient(circle at 20% 20%,rgba(47,143,91,.14) 0 2px,transparent 2px 30px),linear-gradient(145deg,#d9efe0,#fff1c4)}.pin{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--orange);border:4px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.pass{background:var(--green);color:#fff}.passlayout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}.ticket{background:var(--cream);color:var(--ink);padding:2rem;border-radius:30px;border:2px dashed #edae57}.ticket h3{font-size:2.2rem;margin:.2rem 0}.benefits{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.benefits span{background:#fff;border-radius:999px;padding:.45rem .75rem;font-weight:800;font-size:.88rem;border:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:s}.step{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.4rem}.step:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--gold);font-weight:900;margin-bottom:.8rem}.step p{color:var(--muted)}.door{margin-top:1.5rem;background:#fff0df;border-left:6px solid var(--orange);padding:1.5rem 1.7rem;border-radius:18px}.door strong{font-size:clamp(1.35rem,3vw,2.2rem)}
+.institutional{background:#f4f1eb}.institutional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.inst{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.4rem}.inst b{font-size:1.1rem}.inst p{color:var(--muted)}
+.closing{text-align:center;padding:7rem 0}.closing h2{font-size:clamp(2.7rem,6.5vw,6rem);letter-spacing:-.055em;line-height:.94;max-width:950px;margin:.5rem auto 1rem}.closing p{max-width:720px;margin:0 auto 2rem;color:var(--muted);font-size:1.15rem}footer{background:#202925;color:#fff;padding:3rem 0}.foot{display:flex;justify-content:space-between;gap:2rem;align-items:end}.foot img{width:72px;background:#fff9f0;border-radius:16px}.foot small{color:#bac1bd}.links{display:flex;flex-wrap:wrap;gap:1rem}.links a{text-decoration:none;font-size:.9rem}
+@media(max-width:900px){.hero-grid,.manifesto,.audio,.mapbox,.passlayout{grid-template-columns:1fr}.grid3,.institutional-grid{grid-template-columns:1fr 1fr}.categories{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){nav a:not(.navcta){display:none}.brandtext small{display:none}.hero{padding-top:4rem}.qgrid,.grid3,.institutional-grid,.categories,.steps{grid-template-columns:1fr}section{padding:4rem 0}.foot{flex-direction:column;align-items:flex-start}.identity-card{max-width:520px;margin:auto}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="brand">SOY <span>TUNGURAHUA</span></div>
-    <nav>
-      <a href="#escucha">Audioguías</a><a href="#explora">Explora</a><a href="#pass">Pass</a><a href="#participa" class="nav-cta">Quiero ser parte</a>
-    </nav>
-  </div>
-</header>
-
+<header><div class="wrap nav"><a class="brandlock" href="#inicio"><img src="assets/logo-soy-tungurahua.svg" alt="Logo Soy Tungurahua"><span class="brandtext"><strong>SOY TUNGURAHUA</strong><small>Red de Cultura, Turismo Consciente y Valor Territorial</small></span></a><nav><a href="#escucha">Audioguías</a><a href="#explora">Explora</a><a href="#pass">Pass</a><a href="#participa" class="navcta">Quiero ser parte</a></nav></div></header>
 <main>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Cultura · turismo consciente · valor territorial</div>
-        <h1>SOY <span>TUNGURAHUA</span></h1>
-        <div class="question">¿Conoces la historia de los lugares que visitas?</div>
-        <p class="lead">Cada rincón guarda memorias, oficios, paisajes, comunidades y personas que hacen territorio. Soy Tungurahua nace para descubrirlos, escucharlos y conectarlos.</p>
-        <div class="buttons">
-          <a class="btn primary" href="#explora">Explorar el territorio</a>
-          <a class="btn secondary" href="#escucha">Escuchar audioguía</a>
-          <a class="btn ghost" href="#participa">Quiero ser parte</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <div class="eyebrow">Viaja con preguntas</div>
-        <h2>Cada lugar tiene algo más que mostrar.</h2>
-        <p>También tiene algo para contar.</p>
-        <div class="mini">
-          <div>¿Quién construyó esta historia?</div>
-          <div>¿Qué había aquí antes del turismo?</div>
-          <div>¿A quién apoyas cuando visitas?</div>
-        </div>
-      </aside>
-    </div>
-  </section>
+<section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Red independiente · cultura · turismo consciente · territorio</div><h1>SOY <span>TUNGURAHUA</span></h1><div class="question">¿Conoces la historia de los lugares que visitas?</div><p class="lead">Una plataforma abierta para explorar Tungurahua desde la curiosidad, la cultura y el territorio. Conectamos personas, experiencias, historias y oportunidades sin convertir la identidad en un decorado.</p><div class="buttons"><a class="btn orange" href="#explora">Explorar el territorio</a><a class="btn green" href="#escucha">Escuchar el territorio</a><a class="btn light" href="#participa">Quiero ser parte</a></div></div><aside class="identity-card"><img src="assets/logo-soy-tungurahua.svg" alt="Identidad visual corporativa de Soy Tungurahua"><div class="identity-note"><strong>Institucional en sus reglas. Aventurero en su manera de descubrir.</strong><p>Una identidad territorial contemporánea: volcán, caminos, naturaleza, comunidad y creación.</p></div></aside></div></section>
+<div class="cantons"><div class="wrap cantons-row"><span class="pill">Ambato</span><span class="pill">Baños de Agua Santa</span><span class="pill">Cevallos</span><span class="pill">Mocha</span><span class="pill">Patate</span><span class="pill">Pelileo</span><span class="pill">Quero</span><span class="pill">Tisaleo</span><span class="pill">Santiago de Píllaro</span></div></div>
+<div class="band"><div class="wrap"><span><b>9</b> cantones</span><span>Puerta de ingreso pública</span><span>Audioguías</span><span>Experiencias</span><span>Mapa territorial</span><span>Beneficios y alianzas</span></div></div>
 
-  <div class="cantons">
-    <div class="wrap cantons-row">
-      <span class="pill">Ambato</span><span class="pill">Baños de Agua Santa</span><span class="pill">Cevallos</span><span class="pill">Mocha</span><span class="pill">Patate</span><span class="pill">Pelileo</span><span class="pill">Quero</span><span class="pill">Tisaleo</span><span class="pill">Santiago de Píllaro</span>
-    </div>
-  </div>
+<section class="adventure"><div class="wrap manifesto"><div class="quote">Una aventura laica: conocer sin que nadie te diga qué creer.</div><div class="principles"><div class="principle"><b>Curiosidad antes que doctrina</b><span>La historia, la memoria y los relatos se presentan como invitaciones a pensar, preguntar y contrastar.</span></div><div class="principle"><b>Asombro sin superstición obligatoria</b><span>Podemos disfrutar símbolos, imaginarios y tradiciones sin convertirlos en verdades impuestas.</span></div><div class="principle"><b>Territorio antes que espectáculo</b><span>Detrás de cada visita hay personas, oficios, procesos, paisajes y memoria.</span></div><div class="principle"><b>Libertad para interpretar</b><span>La experiencia pertenece también al visitante: escuchar, observar, preguntar y construir su propia lectura.</span></div></div></div></section>
 
-  <section class="questions">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Antes de visitar, pregúntate</div>
-        <h2>Viajar también puede ser comprender.</h2>
-        <p>Los lugares no son solamente escenarios. Son territorios vivos.</p>
-      </div>
-      <div class="questions-grid">
-        <div class="qcard">¿Sabes quién construyó la historia de este lugar?</div>
-        <div class="qcard">¿Conoces qué había aquí antes del turismo?</div>
-        <div class="qcard">¿Qué oficios, memorias y saberes habitan este territorio?</div>
-        <div class="qcard">¿Viajas solo para ver, o también para comprender?</div>
-      </div>
-    </div>
-  </section>
+<section class="questions"><div class="wrap"><div class="head"><div class="eyebrow">Viaja con preguntas</div><h2>Los lugares cambian cuando conocemos su historia.</h2><p>El turismo consciente comienza antes de comprar una entrada: comienza preguntándonos qué estamos mirando.</p></div><div class="qgrid"><div class="q">¿Qué había aquí antes de que llegaran los visitantes?</div><div class="q">¿Quiénes construyeron la identidad de este lugar?</div><div class="q">¿Qué relatos tienen fuentes y cuáles son interpretaciones?</div><div class="q">¿A quién beneficia nuestra visita?</div><div class="q">¿Qué oficio, saber o memoria podríamos estar pasando por alto?</div><div class="q">¿Estamos recorriendo un escenario o un territorio vivo?</div></div></div></section>
 
-  <section id="escucha">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Escucha el territorio</div>
-        <h2>Audioguías históricas y culturales.</h2>
-        <p>Relatos breves para recorrer Tungurahua con otros oídos: historia, memoria, naturaleza, oficios y voces locales.</p>
-      </div>
-      <div class="audio-layout">
-        <div class="player">
-          <div>
-            <div class="eyebrow">Audioguía de bienvenida</div>
-            <h3>¿Qué significa conocer un lugar?</h3>
-            <p>Próximamente podrás escuchar aquí la primera pieza de la serie histórica de Soy Tungurahua.</p>
-          </div>
-          <div class="player-button" aria-label="Audio próximamente">▶</div>
-          <div class="wave" aria-hidden="true"><i style="--h:18px"></i><i style="--h:38px"></i><i style="--h:26px"></i><i style="--h:54px"></i><i style="--h:34px"></i><i style="--h:48px"></i><i style="--h:22px"></i><i style="--h:42px"></i><i style="--h:29px"></i><i style="--h:58px"></i><i style="--h:35px"></i><i style="--h:20px"></i></div>
-        </div>
-        <div class="audio-list">
-          <div class="audio-item"><strong>Historia del lugar</strong><span>Cómo nació, cambió y llegó a ser lo que vemos hoy.</span></div>
-          <div class="audio-item"><strong>Memoria cultural</strong><span>Relatos, personajes, expresiones y acontecimientos vinculados al territorio.</span></div>
-          <div class="audio-item"><strong>Oficios y saberes</strong><span>Las manos, técnicas y conocimientos que construyen identidad.</span></div>
-          <div class="audio-item"><strong>Naturaleza y territorio</strong><span>Comprender el paisaje antes de fotografiarlo.</span></div>
-          <div class="audio-item"><strong>Voces de comunidad</strong><span>Historias contadas por quienes habitan y hacen el territorio.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="escucha"><div class="wrap"><div class="head"><div class="eyebrow">Escucha el territorio</div><h2>Audioguías históricas, culturales y territoriales.</h2><p>Piezas breves para acompañar una visita sin reemplazar la experiencia. Contexto, preguntas, memoria y voces para mirar mejor.</p></div><div class="audio"><div class="player"><div class="eyebrow">Audioguía de bienvenida</div><h3>¿Qué significa realmente conocer un lugar?</h3><p>La primera pieza introducirá el recorrido desde una idea sencilla: antes de consumir una experiencia, vale la pena saber dónde estamos, quiénes estuvieron antes y qué historias conviven allí.</p><div class="play" aria-label="Audioguía próximamente">▶</div><div class="wave" aria-hidden="true"><i style="--h:18px"></i><i style="--h:42px"></i><i style="--h:28px"></i><i style="--h:55px"></i><i style="--h:33px"></i><i style="--h:48px"></i><i style="--h:22px"></i><i style="--h:39px"></i><i style="--h:58px"></i><i style="--h:31px"></i></div><small>Próximamente · serie abierta a nuevos lugares y miembros</small></div><div class="tracks"><div class="track"><strong>Historia del lugar</strong><span>Procesos, cambios y cronologías.</span></div><div class="track"><strong>Memoria cultural</strong><span>Personas, prácticas y relatos documentados.</span></div><div class="track"><strong>Oficios y saberes</strong><span>Quién crea, produce, conserva y transmite.</span></div><div class="track"><strong>Naturaleza y territorio</strong><span>Paisaje, agua, volcanes, biodiversidad y transformación.</span></div><div class="track"><strong>Preguntas para el recorrido</strong><span>Una pausa para mirar de nuevo.</span></div></div></div></div></section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">Turismo consciente</div><h2>Mirar más allá.</h2><p>No se trata solo de llegar, fotografiar y seguir. Se trata de detenerse, escuchar, comprender y reconocer a quienes sostienen cada experiencia.</p></div>
-      <div class="values">
-        <div class="value"><b>Explora</b><p>Descubre lugares y proyectos que hacen territorio.</p></div>
-        <div class="value"><b>Escucha</b><p>Conoce las historias detrás de lo que visitas.</p></div>
-        <div class="value"><b>Conecta</b><p>Encuentra personas, saberes y experiencias cercanas.</p></div>
-        <div class="value"><b>Apoya</b><p>Haz circular valor entre actores locales.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="network" id="explora"><div class="wrap"><div class="head"><div class="eyebrow">Explora una red diversa</div><h2>Conoce a quienes hacen Tungurahua.</h2><p>No importa de qué organización vienes. Importa qué valor aportas al territorio.</p></div><div class="categories"><div class="cat">Cultura y arte<small>Creación, espacios y programación.</small></div><div class="cat">Artesanía y oficios<small>Trabajo manual, autoría y transmisión.</small></div><div class="cat">Turismo consciente<small>Experiencias responsables.</small></div><div class="cat">Gastronomía<small>Sabores, productores y cocinas.</small></div><div class="cat">Naturaleza<small>Conservación e interpretación.</small></div><div class="cat">Saberes y comunidades<small>Memoria y conocimiento territorial.</small></div><div class="cat">Museos y espacios<small>Patrimonio, colecciones y mediación.</small></div><div class="cat">Investigación y educación<small>Conocimiento para comprender mejor.</small></div></div></div></section>
 
-  <section class="network" id="explora">
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">La red</div><h2>Conoce a quienes hacen Tungurahua.</h2><p>Una red abierta a proyectos grandes y pequeños, independientes, comunitarios, culturales, productivos y turísticos.</p></div>
-      <div class="category-grid">
-        <div class="category">Cultura y arte<small>Creación, espacios, eventos y proyectos.</small></div>
-        <div class="category">Artesanía y oficios<small>Técnicas, talleres y producción con identidad.</small></div>
-        <div class="category">Turismo consciente<small>Experiencias que respetan territorio y comunidad.</small></div>
-        <div class="category">Gastronomía<small>Sabores, productores y cocinas locales.</small></div>
-        <div class="category">Naturaleza<small>Conservación, interpretación y experiencias responsables.</small></div>
-        <div class="category">Saberes y comunidades<small>Memoria, transmisión y conocimiento territorial.</small></div>
-        <div class="category">Museos y espacios culturales<small>Lugares para comprender y compartir historias.</small></div>
-        <div class="category">Investigación y educación<small>Datos, pensamiento, formación y conocimiento.</small></div>
-        <div class="category">Producción y alojamiento<small>Emprendimientos que hacen circular valor local.</small></div>
-      </div>
-    </div>
-  </section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">Mapa del territorio vivo</div><h2>Más que puntos: conexiones.</h2><p>El mapa reunirá miembros, experiencias, historias, beneficios y audioguías por cantón y actividad.</p></div><div class="mapbox"><div><h3>¿Qué podrás encontrar?</h3><div class="grid3"><div class="card"><h3>Personas</h3><p>Quién está detrás de cada proyecto.</p></div><div class="card"><h3>Historias</h3><p>Contexto para comprender cada lugar.</p></div><div class="card"><h3>Experiencias</h3><p>Qué puedes hacer, escuchar y descubrir.</p></div></div></div><div class="mapvisual" aria-label="Representación conceptual del futuro mapa"><span class="pin" style="left:18%;top:35%"></span><span class="pin" style="left:37%;top:64%"></span><span class="pin" style="left:54%;top:28%"></span><span class="pin" style="left:72%;top:52%"></span><span class="pin" style="left:83%;top:23%"></span></div></div></div></section>
 
-  <section>
-    <div class="wrap map-card">
-      <div>
-        <div class="eyebrow">Mapa del territorio vivo</div>
-        <h2>Explora por cantón, actividad e historia.</h2>
-        <p>El mapa de Soy Tungurahua conectará miembros, experiencias, audioguías, beneficios y rutas para ayudarte a descubrir qué existe cerca de ti.</p>
-        <div class="buttons"><a class="btn secondary" href="#participa">Sumar mi proyecto</a></div>
-      </div>
-      <div class="map-visual" aria-label="Representación conceptual del mapa de Tungurahua">
-        <span class="pin" style="left:18%;top:35%"></span><span class="pin" style="left:39%;top:22%"></span><span class="pin" style="left:57%;top:42%"></span><span class="pin" style="left:72%;top:27%"></span><span class="pin" style="left:31%;top:63%"></span><span class="pin" style="left:65%;top:68%"></span><span class="pin" style="left:82%;top:56%"></span>
-      </div>
-    </div>
-  </section>
+<section class="pass" id="pass"><div class="wrap passlayout"><div><div class="eyebrow" style="color:#ffe07c">Soy Tungurahua Pass</div><h2 style="font-size:clamp(2.5rem,5vw,4.7rem);line-height:1;margin:.5rem 0 1rem">Beneficios para descubrir más y mejor.</h2><p>No queremos una simple cuponera. El Pass ayudará a que el visitante circule entre proyectos, conozca nuevos actores y prolongue su relación con el territorio.</p><div class="buttons"><a class="btn light" href="#participa">Quiero ofrecer un beneficio</a></div></div><div class="ticket"><div class="eyebrow">PASS · prototipo</div><h3>SOY TUNGURAHUA</h3><p>Beneficios, experiencias y oportunidades con sentido.</p><div class="benefits"><span>2×1</span><span>Descuentos</span><span>Cortesías</span><span>Audioguías</span><span>Experiencias</span><span>Beneficios locales</span></div></div></div></section>
 
-  <section class="pass" id="pass">
-    <div class="wrap pass-card">
-      <div>
-        <div class="eyebrow" style="color:#ffd45d">Soy Tungurahua Pass</div>
-        <h2>Beneficios para descubrir más y mejor.</h2>
-        <p>Un sistema para conectar visitantes, residentes, miembros y aliados mediante beneficios que incentiven descubrir nuevas historias, personas y lugares.</p>
-        <p><strong>No queremos que el valor se quede quieto. Queremos que circule.</strong></p>
-      </div>
-      <div class="pass-ticket">
-        <div class="eyebrow">PASS · Próximamente</div>
-        <h3>SOY TUNGURAHUA</h3>
-        <p>Beneficios con sentido territorial.</p>
-        <div class="benefits"><span>2×1</span><span>Descuentos</span><span>Cortesías</span><span>Audioguías</span><span>Experiencias</span><span>Beneficios locales</span></div>
-      </div>
-    </div>
-  </section>
+<section id="participa"><div class="wrap"><div class="head"><div class="eyebrow">Red abierta</div><h2>No necesitas que nadie te invite.</h2><p>La puerta de entrada debe ser visible. Los requisitos, criterios y procesos de incorporación serán públicos.</p></div><div class="steps"><div class="step"><b>Cuéntanos quién eres</b><p>Presenta tu proyecto, actividad o iniciativa.</p></div><div class="step"><b>Verificamos</b><p>Confirmamos existencia e información básica.</p></div><div class="step"><b>Aceptas los principios</b><p>Respeto, transparencia, colaboración y responsabilidad territorial.</p></div><div class="step"><b>Entras a la red</b><p>Tu ficha podrá incorporarse al directorio, mapa, rutas y oportunidades.</p></div></div><div class="door"><strong>La pertenencia no depende de contactos, tamaño económico ni invitaciones previas.</strong><br>El formulario público de adhesión será el siguiente componente de la plataforma.</div></div></section>
 
-  <section id="participa">
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">Participa</div><h2>No necesitas que nadie te invite.</h2><p>Toda persona o iniciativa que cumpla los criterios públicos podrá solicitar su incorporación a la Red.</p></div>
-      <div class="participate-grid">
-        <div class="step"><b>Cuéntanos quién eres</b><p>Presenta tu proyecto, actividad o iniciativa.</p></div>
-        <div class="step"><b>Comparte tu aporte</b><p>Cuéntanos qué haces y qué valor generas desde el territorio.</p></div>
-        <div class="step"><b>Verificamos</b><p>Confirmamos que la información sea real y suficiente.</p></div>
-        <div class="step"><b>Entras a la red</b><p>Podrás integrarte al directorio, mapa, rutas, Pass y oportunidades.</p></div>
-      </div>
-      <div class="open-door"><strong>La puerta de entrada es pública.</strong><br>Sin invitaciones obligatorias. Sin necesidad de pertenecer previamente a un gremio. Sin importar si tu proyecto es grande o pequeño.</div>
-      <div class="buttons"><a class="btn primary" href="mailto:hola@soytungurahua.com?subject=Quiero%20ser%20parte%20de%20Soy%20Tungurahua">Quiero ser parte</a><a class="btn ghost" href="mailto:hola@soytungurahua.com?subject=Quiero%20sumar%20una%20historia%20o%20audiogu%C3%ADa">Quiero sumar una historia</a></div>
-    </div>
-  </section>
+<section class="institutional"><div class="wrap"><div class="head"><div class="eyebrow">Confianza institucional</div><h2>Una red que también se puede auditar.</h2><p>La aventura necesita libertad; la organización necesita reglas. La dimensión institucional de Soy Tungurahua estará documentada públicamente.</p></div><div class="institutional-grid"><div class="inst"><b>Gobernanza</b><p>Responsables, períodos, mecanismos de decisión y rotación.</p></div><div class="inst"><b>Transparencia</b><p>Criterios de ingreso, convocatorias, proyectos y recursos colectivos.</p></div><div class="inst"><b>Estatuto consciente</b><p>Principios para impedir círculos cerrados y concentración de oportunidades.</p></div></div><div class="buttons"><a class="btn light" href="https://soytungurahua.org">Conocer la dimensión institucional →</a></div></div></section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">Aliados</div><h2>También puedes aportar desde fuera de la provincia.</h2><p>Universidades, empresas, medios, organizaciones e instituciones pueden colaborar sin necesidad de convertirse en miembros territoriales.</p></div>
-      <div class="allies">
-        <div class="ally"><h3>Miembro</h3><p>Actor que crea valor desde Tungurahua y forma parte de la red territorial.</p></div>
-        <div class="ally"><h3>Aliado</h3><p>Organización que aporta beneficios, formación, tecnología, difusión, recursos u oportunidades.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing">
-    <div class="wrap">
-      <div class="eyebrow">Una provincia. Miles de historias.</div>
-      <h2>¿Conoces la historia de los lugares que visitas?</h2>
-      <p>Tal vez viajar también sea aprender a escuchar el territorio, reconocer a quienes lo construyen y volver a mirar con más conciencia.</p>
-      <div class="buttons" style="justify-content:center"><a class="btn primary" href="#participa">Yo también hago territorio</a><a class="btn secondary" href="#escucha">Escuchar el territorio</a></div>
-    </div>
-  </section>
+<section class="closing"><div class="wrap"><div class="eyebrow">Soy Tungurahua</div><h2>Explora. Pregunta. Escucha. Haz territorio.</h2><p>Viajar puede ser aventura sin dejar de ser pensamiento. Puede ser asombro sin renunciar a la razón. Puede ser disfrute y, al mismo tiempo, una forma de reconocer a quienes hacen posible el lugar que visitamos.</p><div class="buttons" style="justify-content:center"><a class="btn orange" href="#inicio">Volver al inicio</a><a class="btn green" href="#participa">Quiero ser parte</a></div></div></section>
 </main>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div><div class="brand">SOY <span>TUNGURAHUA</span></div><p>Red de Cultura, Turismo Consciente y Valor Territorial.</p><p>Conectamos a quienes crean valor desde el territorio.</p></div>
-    <div class="footer-links"><a href="#escucha">Audioguías</a><a href="#explora">Explora</a><a href="#pass">Pass</a><a href="#participa">Participa</a><a href="https://soytungurahua.org">Transparencia</a></div>
-  </div>
-</footer>
-</body>
-</html>
+<footer><div class="wrap foot"><div style="display:flex;gap:1rem;align-items:center"><img src="assets/logo-soy-tungurahua.svg" alt="Soy Tungurahua"><div><strong>SOY TUNGURAHUA</strong><br><small>Red de Cultura, Turismo Consciente y Valor Territorial</small></div></div><div class="links"><a href="#escucha">Audioguías</a><a href="#explora">Explora</a><a href="#participa">Participa</a><a href="https://soytungurahua.org">Institucional</a></div></div></footer>
+</body></html>
