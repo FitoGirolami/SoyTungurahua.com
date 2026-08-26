@@ -44,7 +44,7 @@
     img{max-width:100%;display:block}
     a{color:inherit}
     .wrap{width:min(1180px,92vw);margin:auto}
-    .eyebrow{font-size:.76rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+    .eyebrow{font-size:.76rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--green);line-height:1.35}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.92rem 1.08rem;border-radius:999px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s ease;min-height:50px;text-align:center;white-space:normal;line-height:1.2}
     .btn:hover{transform:translateY(-2px)}
     .btn.orange{background:var(--orange);color:#fff}
@@ -62,7 +62,7 @@
     .links a{text-decoration:none;font-weight:850;padding:.68rem .9rem;border-radius:999px}
     .links .go{background:var(--orange);color:#fff}
 
-    .hero{padding:4.7rem 0 3rem;position:relative;overflow:hidden}
+    .hero{padding:4.2rem 0 3rem;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;right:-190px;top:-250px;width:590px;height:590px;border-radius:50%;background:radial-gradient(circle,var(--yellow) 0 22%,rgba(242,107,58,.13) 48%,transparent 72%);z-index:-1}
     .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:2rem;align-items:center}
     h1{font-size:clamp(3.3rem,8vw,7.2rem);line-height:.87;letter-spacing:-.065em;margin:.55rem 0 .95rem}
@@ -139,58 +139,28 @@
 
     @media (max-width:760px){
       .wrap{width:min(100%,92vw)}
-      .nav{min-height:72px;gap:.75rem}
+      header{position:sticky}
+      .nav{min-height:74px;gap:.8rem}
       .brand{gap:.7rem}
       .mark{width:44px;height:44px;border-radius:14px}
       .brand-copy strong{font-size:.94rem}
       .brand-copy small{display:none}
-      .links{gap:.35rem}
       .links a:not(.go){display:none}
-      .links .go{padding:.75rem .95rem;font-size:.95rem;min-height:44px}
-      .hero{padding:3rem 0 2rem}
-      .eyebrow{font-size:.7rem;letter-spacing:.12em}
-      h1{font-size:clamp(2.65rem,13vw,4.2rem);line-height:.9}
+      .links .go{padding:.78rem .95rem;font-size:.95rem;min-height:46px}
+      .hero{padding:2.4rem 0 1.7rem}
+      .eyebrow{font-size:.68rem;letter-spacing:.11em;max-width:100%;white-space:normal}
+      h1{font-size:clamp(2.5rem,12vw,3.9rem);line-height:.92;margin:.45rem 0 .85rem}
       .lead{font-size:1rem}
       .hero-actions{display:grid;grid-template-columns:1fr;gap:.7rem}
       .hero-actions .btn{width:100%;font-size:.98rem;padding:1rem .9rem}
-      .picker{padding:.95rem}
+      .picker{padding:1rem}
       .cantons,.routegrid,.listen{grid-template-columns:1fr}
       .canton,.route,.q{min-height:auto}
-      .section{padding:3.4rem 0}
+      .section{padding:3rem 0}
       .mapbox{min-height:240px}
-      .copy,.card,.joinbox{padding:1.2rem}
-      .mobile-dock{
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:.4rem;
-        position:fixed;
-        left:12px;
-        right:12px;
-        bottom:calc(env(safe-area-inset-bottom,0px) + 78px);
-        z-index:70;
-        background:rgba(255,255,255,.98);
-        border:1px solid var(--line);
-        border-radius:20px;
-        padding:.48rem;
-        box-shadow:0 16px 30px rgba(0,0,0,.14);
-        backdrop-filter:blur(10px)
-      }
-      .mobile-dock a{
-        text-decoration:none;
-        font-size:.70rem;
-        font-weight:900;
-        text-align:center;
-        padding:.58rem .15rem;
-        border-radius:14px;
-        background:var(--cream);
-        min-height:52px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        line-height:1.15
-      }
-      .mobile-dock a.primary{background:var(--orange);color:#fff}
-      footer{padding-bottom:11rem}
+      .copy,.card,.joinbox{padding:1.15rem}
+      .mobile-dock{display:none !important}
+      footer{padding-bottom:2.2rem}
     }
 
     @media (max-width:420px){
@@ -198,9 +168,8 @@
       .nav{align-items:center}
       .brand-copy strong{font-size:.88rem}
       .links .go{font-size:.9rem;padding:.72rem .85rem}
-      h1{font-size:clamp(2.45rem,12vw,3.5rem)}
+      h1{font-size:clamp(2.3rem,12vw,3.35rem)}
       .hero-actions .btn{font-size:.94rem}
-      .mobile-dock a{font-size:.66rem}
     }
   </style>
 </head>
@@ -392,12 +361,5 @@
       <div><a href="que-hacer.html">Qué hacer</a> · <a href="mapa.html">Mapa</a> · <a href="catastro.html">Catastro</a> · <a href="#participa">Sumarte</a></div>
     </div>
   </footer>
-
-  <nav class="mobile-dock" aria-label="Accesos rápidos móviles">
-    <a href="que-hacer.html">🧭<br>Qué hacer</a>
-    <a href="mapa.html">📍<br>Mapa</a>
-    <a href="catastro.html">🗂️<br>Catastro</a>
-    <a class="primary" href="#participa">✨<br>Sumarte</a>
-  </nav>
 </body>
 </html>
