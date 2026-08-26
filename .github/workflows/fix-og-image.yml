@@ -1,0 +1,34 @@
+name: Fix WhatsApp OG image
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-og-image.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-og:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace social image URLs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old1 = 'https://soytungurahua.com/assets/og-soy-tungurahua.jpg?v=20260826-4'
+          old2 = 'https://soytungurahua.com/assets/og-soy-tungurahua.jpg'
+          new = 'https://raw.githubusercontent.com/FitoGirolami/SoyTungurahua.com/main/assets/og-soy-tungurahua.jpg'
+          s = s.replace(old1, new).replace(old2, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Servir OG image desde GitHub CDN"
+          git push
