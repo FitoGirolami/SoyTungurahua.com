@@ -1,0 +1,25 @@
+# Soy Tungurahua
+
+Soy Tungurahua es un portal territorial independiente sobre la provincia de Tungurahua, Ecuador.
+
+Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios, actores, mapas, rutas, audioguías, radio, investigación y datos abiertos.
+
+## Principales recursos
+- Inicio: https://soytungurahua.com/
+- Explorador semántico: https://soytungurahua.com/explorar.html
+- Qué hacer: https://soytungurahua.com/que-hacer.html
+- Mapa: https://soytungurahua.com/mapa.html
+- Radio: https://soytungurahua.com/radio.html
+- Catastro territorial: https://soytungurahua.com/catastro.html
+- Grafo de conocimiento: https://soytungurahua.com/data/knowledge-graph.json
+
+## Cobertura territorial
+Ambato, Baños de Agua Santa, Cevallos, Mocha, Patate, San Pedro de Pelileo, Santiago de Píllaro, Quero y Tisaleo.
+
+## Criterio editorial
+Distinguir cuando sea posible entre historia documentada, memoria oral, tradición o patrimonio, leyenda, interpretación contemporánea y relato turístico. Reconocer fuentes y autorías identificables. Evitar confundir ausencia de información con inexistencia.
+
+## Idea central
+No vengas solo a mirar. Ven a entender dónde estás.
+
+Todo está conectado con el territorio.
