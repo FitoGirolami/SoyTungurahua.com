@@ -1,0 +1,302 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "st": "https://soytungurahua.com/ns#"
+  },
+  "name": "Grafo de conocimiento Soy Tungurahua",
+  "description": "Base semántica inicial para conectar territorios, cultura, historia, naturaleza, oficios, audio, rutas y fuentes de Tungurahua.",
+  "version": "0.1.0",
+  "updated": "2026-08-27",
+  "entities": [
+    {
+      "id": "territorio:tungurahua",
+      "type": "AdministrativeArea",
+      "category": "territorio",
+      "name": "Tungurahua",
+      "description": "Provincia andina del Ecuador organizada aquí como un territorio conectado por nueve cantones, historias, actores, paisajes, oficios y expresiones culturales.",
+      "keywords": ["Tungurahua", "provincia", "Ecuador", "territorio", "nueve cantones"],
+      "related": ["canton:ambato", "canton:banos", "canton:cevallos", "canton:mocha", "canton:patate", "canton:pelileo", "canton:pillaro", "canton:quero", "canton:tisaleo", "tema:identidad-cultural", "tema:turismo-consciente"],
+      "pages": ["index.html", "mapa.html", "que-hacer.html", "explorar.html"]
+    },
+    {
+      "id": "canton:ambato",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Ambato",
+      "description": "Ciudad, memoria urbana, mercados, oficios y reconstrucciones que ayudan a leer la historia provincial.",
+      "keywords": ["Ambato", "mercados", "oficios", "terremotos", "memoria urbana", "historia"],
+      "related": ["territorio:tungurahua", "tema:terremotos", "tema:oficios", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:banos",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Baños de Agua Santa",
+      "description": "Agua, volcán, religiosidad, cultura contemporánea, turismo y transformaciones urbanas en uno de los principales destinos de la provincia.",
+      "keywords": ["Baños", "Baños de Agua Santa", "volcán", "aguas termales", "turismo", "cultura", "Pastaza"],
+      "related": ["territorio:tungurahua", "tema:agua", "tema:volcan", "tema:turismo-consciente", "tema:turistificacion", "tema:derecho-relatar", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html", "radio.html"]
+    },
+    {
+      "id": "canton:cevallos",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Cevallos",
+      "description": "Memoria ferroviaria, calzado, huertos y producción local conectados por la historia de la movilidad.",
+      "keywords": ["Cevallos", "ferrocarril", "tren", "calzado", "huertos", "fruticultura"],
+      "related": ["territorio:tungurahua", "tema:ferrocarril", "tema:oficios", "tema:paisaje-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:mocha",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Mocha",
+      "description": "Páramo, agua, caminos andinos, agricultura y saberes de altura vinculados a la relación entre montaña y vida cotidiana.",
+      "keywords": ["Mocha", "páramo", "agua", "Carihuairazo", "caminos", "agricultura"],
+      "related": ["territorio:tungurahua", "tema:paramo", "tema:agua", "tema:paisaje-cultural", "tema:oficios"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:patate",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Patate",
+      "description": "Valle agrícola donde paisaje, cultivos, agua, caminos y conocimientos transmitidos construyen una identidad propia.",
+      "keywords": ["Patate", "valle", "agricultura", "frutales", "Llanganates", "paisaje cultural"],
+      "related": ["territorio:tungurahua", "tema:paisaje-cultural", "tema:agua", "tema:oficios", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:pelileo",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "San Pedro de Pelileo",
+      "description": "Textiles, reconstrucción, madera y la presencia del pueblo Salasaka, cuya identidad y organización deben comprenderse en sus propios términos.",
+      "keywords": ["Pelileo", "Salasaka", "textil", "jean", "Huambaló", "terremoto", "madera"],
+      "related": ["territorio:tungurahua", "pueblo:salasaka", "tema:terremotos", "tema:oficios", "tema:atribucion-cultural", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:pillaro",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Santiago de Píllaro",
+      "description": "Fiesta, máscaras, música, oficios y montaña, con la Diablada como una expresión de patrimonio vivo sostenida por personas y comunidades.",
+      "keywords": ["Píllaro", "Diablada", "máscaras", "música", "Llanganates", "patrimonio vivo"],
+      "related": ["territorio:tungurahua", "manifestacion:diablada-pillaro", "tema:patrimonio-vivo", "tema:oficios", "tema:derecho-relatar"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:quero",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Quero",
+      "description": "Agricultura, vida cotidiana, caminos y oficios que permiten leer la cultura desde aquello que se aprende viviendo un lugar.",
+      "keywords": ["Quero", "agricultura", "danzante", "oficios", "campo", "vida cotidiana"],
+      "related": ["territorio:tungurahua", "tema:oficios", "tema:paisaje-cultural", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "canton:tisaleo",
+      "type": "AdministrativeArea",
+      "category": "cantón",
+      "name": "Tisaleo",
+      "description": "Madera, fabricación de instrumentos, agricultura, fiesta y transmisión de saberes entre generaciones.",
+      "keywords": ["Tisaleo", "madera", "lutería", "instrumentos", "agricultura", "fiesta"],
+      "related": ["territorio:tungurahua", "tema:oficios", "tema:patrimonio-vivo", "tema:identidad-cultural"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "pueblo:salasaka",
+      "type": "PeopleAudience",
+      "category": "pueblo",
+      "name": "Pueblo Salasaka",
+      "description": "Pueblo con identidad, memoria, organización, prácticas y expresiones culturales propias en el territorio de Pelileo.",
+      "keywords": ["Salasaka", "pueblo", "tejido", "identidad", "Pelileo", "cultura"],
+      "related": ["canton:pelileo", "tema:identidad-cultural", "tema:atribucion-cultural", "tema:patrimonio-vivo"],
+      "pages": ["que-hacer.html", "mapa.html"]
+    },
+    {
+      "id": "manifestacion:diablada-pillaro",
+      "type": "Event",
+      "category": "manifestación cultural",
+      "name": "Diablada Pillareña",
+      "description": "Manifestación cultural de Píllaro cuya continuidad depende de máscaras, música, familias, organización, práctica y transmisión.",
+      "keywords": ["Diablada Pillareña", "Diablada", "Píllaro", "máscaras", "patrimonio vivo"],
+      "related": ["canton:pillaro", "tema:patrimonio-vivo", "tema:oficios", "tema:derecho-relatar"],
+      "pages": ["que-hacer.html"]
+    },
+    {
+      "id": "tema:agua",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Agua",
+      "description": "Tema transversal para comprender páramos, termalismo, ríos, agricultura, abastecimiento y relaciones entre montaña y asentamientos.",
+      "keywords": ["agua", "ríos", "termalismo", "páramo", "abastecimiento", "cuencas"],
+      "related": ["canton:banos", "canton:mocha", "canton:patate", "tema:paramo", "tema:volcan", "tema:paisaje-cultural"],
+      "pages": ["explorar.html", "mapa.html"]
+    },
+    {
+      "id": "tema:paramo",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Páramo",
+      "description": "Ecosistema de altura fundamental para la regulación y almacenamiento de agua, además de ser paisaje vivido y productivo.",
+      "keywords": ["páramo", "agua", "altura", "ecosistema", "Mocha", "Quero", "Tisaleo"],
+      "related": ["canton:mocha", "canton:quero", "canton:tisaleo", "tema:agua", "tema:paisaje-cultural"],
+      "pages": ["explorar.html", "que-hacer.html"]
+    },
+    {
+      "id": "tema:volcan",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Volcán Tungurahua",
+      "description": "Presencia geológica que ha marcado paisaje, riesgo, evacuaciones, imaginarios y formas de vivir en el territorio.",
+      "keywords": ["volcán Tungurahua", "volcán", "erupciones", "Baños", "riesgo", "geología"],
+      "related": ["canton:banos", "tema:agua", "tema:identidad-cultural"],
+      "pages": ["explorar.html", "mapa.html"]
+    },
+    {
+      "id": "tema:terremotos",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Terremotos y reconstrucción",
+      "description": "Rupturas históricas que ayudan a explicar cambios urbanos, sociales y culturales en distintos cantones de Tungurahua.",
+      "keywords": ["terremoto", "1949", "reconstrucción", "Ambato", "Pelileo", "Patate"],
+      "related": ["canton:ambato", "canton:pelileo", "canton:patate", "tema:identidad-cultural"],
+      "pages": ["explorar.html"]
+    },
+    {
+      "id": "tema:ferrocarril",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Ferrocarril y movilidad",
+      "description": "El tren como infraestructura que conectó personas, productos, noticias y transformaciones económicas en el territorio.",
+      "keywords": ["ferrocarril", "tren", "estación", "Cevallos", "Mocha", "movilidad"],
+      "related": ["canton:cevallos", "canton:mocha", "tema:oficios"],
+      "pages": ["explorar.html", "que-hacer.html"]
+    },
+    {
+      "id": "tema:paisaje-cultural",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Paisaje cultural",
+      "description": "Forma de leer un paisaje como resultado de la relación entre naturaleza, trabajo, conocimientos, cultivos, caminos y formas de vida.",
+      "keywords": ["paisaje cultural", "agricultura", "valle", "territorio", "conocimiento", "Patate"],
+      "related": ["canton:patate", "canton:mocha", "canton:quero", "tema:agua", "tema:oficios"],
+      "pages": ["explorar.html"]
+    },
+    {
+      "id": "tema:patrimonio-vivo",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Patrimonio vivo",
+      "description": "Prácticas y conocimientos que continúan existiendo porque personas y comunidades los realizan, enseñan, adaptan y transmiten.",
+      "keywords": ["patrimonio vivo", "tradición", "transmisión", "fiesta", "oficios", "Diablada"],
+      "related": ["manifestacion:diablada-pillaro", "pueblo:salasaka", "canton:tisaleo", "tema:oficios", "tema:atribucion-cultural"],
+      "pages": ["explorar.html", "que-hacer.html"]
+    },
+    {
+      "id": "tema:oficios",
+      "type": "DefinedTerm",
+      "category": "tema",
+      "name": "Oficios y saberes",
+      "description": "Conocimientos aprendidos haciendo: artesanía, panadería, agricultura, madera, tejidos, cocina, música y otros trabajos vinculados al territorio.",
+      "keywords": ["oficios", "artesanía", "artesanos", "panadería", "agricultura", "madera", "tejido", "cocina"],
+      "related": ["canton:ambato", "canton:cevallos", "canton:mocha", "canton:patate", "canton:pelileo", "canton:pillaro", "canton:quero", "canton:tisaleo", "tema:patrimonio-vivo"],
+      "pages": ["catastro.html", "mapa.html", "explorar.html"]
+    },
+    {
+      "id": "tema:identidad-cultural",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Identidad cultural",
+      "description": "Construcción colectiva y cambiante que reúne prácticas, historias, lenguajes, pertenencias, trabajos, celebraciones y formas de interpretar un lugar.",
+      "keywords": ["identidad cultural", "cultura", "territorio", "pertenencia", "memoria", "Tungurahua"],
+      "related": ["territorio:tungurahua", "tema:derecho-relatar", "tema:atribucion-cultural", "tema:patrimonio-vivo"],
+      "pages": ["explorar.html", "radio.html"]
+    },
+    {
+      "id": "tema:turismo-consciente",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Turismo consciente",
+      "description": "Forma de viajar que procura comprender los efectos de la visita, respetar comunidades, reconocer autorías, reducir impactos y hacer circular valor en el territorio.",
+      "keywords": ["turismo consciente", "viajar", "comunidad", "comprar local", "respeto", "territorio"],
+      "related": ["territorio:tungurahua", "canton:banos", "tema:turistificacion", "tema:atribucion-cultural", "tema:derecho-relatar"],
+      "pages": ["index.html", "que-hacer.html", "radio.html", "explorar.html"]
+    },
+    {
+      "id": "tema:turistificacion",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Turistificación",
+      "description": "Transformación de espacios, servicios y dinámicas cotidianas para responder crecientemente a la presencia y consumo de visitantes.",
+      "keywords": ["turistificación", "turismo", "ciudad turística", "Baños", "vivienda", "comercio"],
+      "related": ["canton:banos", "tema:turismo-consciente", "tema:derecho-relatar"],
+      "pages": ["explorar.html", "radio.html"]
+    },
+    {
+      "id": "tema:derecho-relatar",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Derecho a relatar el territorio",
+      "description": "Pregunta sobre quiénes participan en la construcción pública de las historias de un lugar y cómo se reconocen voces, fuentes, autorías y versiones.",
+      "keywords": ["derecho a relatar", "relato territorial", "autoría", "fuentes", "voces locales", "historia"],
+      "related": ["tema:identidad-cultural", "tema:atribucion-cultural", "tema:turismo-consciente", "tema:turistificacion", "canton:banos", "canton:pillaro"],
+      "pages": ["radio.html", "explorar.html"]
+    },
+    {
+      "id": "tema:atribucion-cultural",
+      "type": "DefinedTerm",
+      "category": "concepto",
+      "name": "Atribución cultural",
+      "description": "Principio que procura reconocer a autores, comunidades, investigadores y fuentes cuando una creación, relato, metodología o expresión tiene un origen identificable.",
+      "keywords": ["atribución cultural", "autoría", "creadores", "fuentes", "artistas", "reconocimiento"],
+      "related": ["tema:derecho-relatar", "tema:turismo-consciente", "tema:patrimonio-vivo", "pueblo:salasaka"],
+      "pages": ["explorar.html", "radio.html"]
+    },
+    {
+      "id": "canal:radio",
+      "type": "RadioStation",
+      "category": "escuchar",
+      "name": "Radio Soy Tungurahua",
+      "description": "Señal cultural de música, historias, cápsulas educativas y voces del territorio.",
+      "keywords": ["Radio Soy Tungurahua", "radio", "audio", "música", "historias", "La voz del territorio"],
+      "related": ["tema:identidad-cultural", "tema:turismo-consciente", "tema:derecho-relatar", "canal:audioguias"],
+      "pages": ["radio.html"]
+    },
+    {
+      "id": "canal:audioguias",
+      "type": "CreativeWork",
+      "category": "escuchar",
+      "name": "Audioguías Soy Tungurahua",
+      "description": "Audios breves para escuchar mientras se recorren lugares, actores y rutas, conectando la visita con contexto histórico y cultural.",
+      "keywords": ["audioguía", "audio", "recorridos", "historias", "rutas", "escuchar"],
+      "related": ["canal:radio", "canal:mapa", "tema:turismo-consciente"],
+      "pages": ["index.html", "que-hacer.html"]
+    },
+    {
+      "id": "canal:mapa",
+      "type": "Map",
+      "category": "herramienta",
+      "name": "Mapa Soy Tungurahua",
+      "description": "Cartografía para ubicar actores, lugares, memorias, oficios, proyectos y experiencias en los nueve cantones.",
+      "keywords": ["mapa", "cartografía", "lugares", "actores", "Tungurahua", "cantones"],
+      "related": ["territorio:tungurahua", "canal:catastro", "canal:audioguias"],
+      "pages": ["mapa.html"]
+    },
+    {
+      "id": "canal:catastro",
+      "type": "Dataset",
+      "category": "datos",
+      "name": "Catastro territorial abierto",
+      "description": "Base pública en expansión para identificar y relacionar actores, iniciativas y puntos del territorio sin confundir ausencia de datos con inexistencia.",
+      "keywords": ["catastro", "datos abiertos", "actores", "territorio", "cartografía", "Soy Tungurahua"],
+      "related": ["canal:mapa", "tema:oficios", "territorio:tungurahua"],
+      "pages": ["catastro.html", "mapa.html"]
+    }
+  ]
+}
