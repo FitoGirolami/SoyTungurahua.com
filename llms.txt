@@ -9,6 +9,7 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 - Explorador semántico: https://soytungurahua.com/explorar.html
 - Cantones y fichas territoriales: https://soytungurahua.com/cantones/
 - Ficha territorial: https://soytungurahua.com/entidad.html?id=AMB-001
+- Metodología y estados de evidencia: https://soytungurahua.com/metodologia.html
 - Qué hacer: https://soytungurahua.com/que-hacer.html
 - Mapa: https://soytungurahua.com/mapa.html
 - Radio: https://soytungurahua.com/radio.html
@@ -19,12 +20,23 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 Ambato, Baños de Agua Santa, Cevallos, Mocha, Patate, San Pedro de Pelileo, Santiago de Píllaro, Quero y Tisaleo.
 
 ## Base territorial
-La cartografía pública incorpora aproximadamente 160 fichas preliminares distribuidas en los nueve cantones. Cada registro posee un identificador territorial y puede conectarse con el explorador, el cantón, el mapa y futuras capas de fuentes, audio, imágenes y verificación.
+La cartografía pública incorpora 162 fichas preliminares distribuidas en los nueve cantones. Cada registro posee un identificador territorial y puede conectarse con el explorador, su cantón, el mapa y capas progresivas de fuentes, audio, imágenes y verificación.
+
+La auditoría del conjunto de origen distingue actualmente 2 registros verificados en fuente pública, 53 referencias documentales que requieren revisión, 95 registros pendientes de verificación de campo y 12 registros no sustentados que no deben tratarse como hechos hasta ser verificados.
+
+Estas cantidades describen el estado metodológico del conjunto de datos, no una valoración de las personas, comunidades o proyectos incluidos.
 
 Los registros preliminares no constituyen certificación oficial. El estado amarillo indica una cartografía viva en proceso de ampliación, no una sanción ni una valoración negativa.
 
+## Evidencia
+Algunas fichas cuentan con una capa documental ampliada en `data/evidencias.js`. Esa capa puede incorporar descripción, aporte territorial, fuente declarada, referencias públicas localizadas, estado de auditoría, hechos documentados y asuntos pendientes.
+
+Una fuente etiquetada como Nivel A, B, C o D en la investigación original no se considera automáticamente verificada. Si se afirma una entrevista, visita u observación de campo y no existe registro comprobable, la ficha debe continuar identificada como pendiente de verificación.
+
 ## Criterio editorial
 Distinguir cuando sea posible entre historia documentada, memoria oral, tradición o patrimonio, leyenda, interpretación contemporánea y relato turístico. Reconocer fuentes y autorías identificables. Evitar confundir ausencia de información con inexistencia.
+
+No presentar como hecho cerrado aquello que el propio conjunto de datos marca como pendiente, no sustentado o sujeto a revisión.
 
 ## Regla semántica
 Un dato no debe quedar aislado. Las entidades deben conectarse con territorio, personas, lugares, oficios, fuentes, audio, rutas, mapas, acontecimientos y conceptos relacionados.
