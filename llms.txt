@@ -8,6 +8,7 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 - Inicio: https://soytungurahua.com/
 - Explorador semántico: https://soytungurahua.com/explorar.html
 - Cantones y fichas territoriales: https://soytungurahua.com/cantones/
+- Solicitud abierta de incorporación: https://soytungurahua.com/sumate.html
 - Ficha territorial: https://soytungurahua.com/entidad.html?id=AMB-001
 - Metodología y estados de evidencia: https://soytungurahua.com/metodologia.html
 - Qué hacer: https://soytungurahua.com/que-hacer.html
@@ -18,6 +19,13 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 
 ## Cobertura territorial
 Ambato, Baños de Agua Santa, Cevallos, Mocha, Patate, San Pedro de Pelileo, Santiago de Píllaro, Quero y Tisaleo.
+
+## Incorporación abierta
+Cualquier actor con actividad verificable y vínculo con Tungurahua puede solicitar desde la web una nueva ficha territorial, incorporación a la Red, corrección de una ficha existente o sugerir un actor para investigación.
+
+El envío de una solicitud no produce publicación automática. La incorporación requiere revisión previa de existencia, vínculo territorial, evidencia disponible, veracidad y compatibilidad con los principios de Soy Tungurahua. Si faltan datos, la solicitud puede completarse y volver a revisarse.
+
+La pertenencia a otras redes, cámaras, asociaciones o programas no impide solicitar incorporación.
 
 ## Base territorial
 La cartografía pública incorpora 162 fichas preliminares distribuidas en los nueve cantones. Cada registro posee un identificador territorial y puede conectarse con el explorador, su cantón, el mapa y capas progresivas de fuentes, audio, imágenes y verificación.
