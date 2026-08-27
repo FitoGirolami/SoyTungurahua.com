@@ -2,11 +2,13 @@
 
 Soy Tungurahua es un portal territorial independiente sobre la provincia de Tungurahua, Ecuador.
 
-Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios, actores, mapas, rutas, audioguías, radio, investigación y datos abiertos.
+Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios, actores, mapas, rutas, audioguías, radio, investigación y datos abiertos mediante una arquitectura semántica.
 
 ## Principales recursos
 - Inicio: https://soytungurahua.com/
 - Explorador semántico: https://soytungurahua.com/explorar.html
+- Cantones y fichas territoriales: https://soytungurahua.com/cantones/
+- Ficha territorial: https://soytungurahua.com/entidad.html?id=AMB-001
 - Qué hacer: https://soytungurahua.com/que-hacer.html
 - Mapa: https://soytungurahua.com/mapa.html
 - Radio: https://soytungurahua.com/radio.html
@@ -16,8 +18,16 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 ## Cobertura territorial
 Ambato, Baños de Agua Santa, Cevallos, Mocha, Patate, San Pedro de Pelileo, Santiago de Píllaro, Quero y Tisaleo.
 
+## Base territorial
+La cartografía pública incorpora aproximadamente 160 fichas preliminares distribuidas en los nueve cantones. Cada registro posee un identificador territorial y puede conectarse con el explorador, el cantón, el mapa y futuras capas de fuentes, audio, imágenes y verificación.
+
+Los registros preliminares no constituyen certificación oficial. El estado amarillo indica una cartografía viva en proceso de ampliación, no una sanción ni una valoración negativa.
+
 ## Criterio editorial
 Distinguir cuando sea posible entre historia documentada, memoria oral, tradición o patrimonio, leyenda, interpretación contemporánea y relato turístico. Reconocer fuentes y autorías identificables. Evitar confundir ausencia de información con inexistencia.
+
+## Regla semántica
+Un dato no debe quedar aislado. Las entidades deben conectarse con territorio, personas, lugares, oficios, fuentes, audio, rutas, mapas, acontecimientos y conceptos relacionados.
 
 ## Idea central
 No vengas solo a mirar. Ven a entender dónde estás.
