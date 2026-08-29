@@ -1,0 +1,74 @@
+name: Integrate artists registry
+on:
+  push:
+    paths:
+      - '.github/workflows/integrate-artists-registry.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Connect artists registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          # INDEX
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          if 'href="artistas.html">Artistas</a>' not in s:
+              s=s.replace('<a class="navlink" href="explorar.html">Explorar</a><a class="navlink" href="que-hacer.html">Qué hacer</a>', '<a class="navlink" href="explorar.html">Explorar</a><a class="navlink" href="artistas.html">Artistas</a><a class="navlink" href="que-hacer.html">Qué hacer</a>')
+              s=s.replace('<a href="explorar.html?q=derecho a relatar">💬 Derecho a relatar</a></div>', '<a href="explorar.html?q=derecho a relatar">💬 Derecho a relatar</a><a href="artistas.html">🎨 Artistas y creadores</a></div>')
+              old='<a class="card" href="radio.html"><div>🔴</div><b>Radio Soy Tungurahua</b><p>Música, historias y voces del territorio.</p></a></div></section>'
+              new='<a class="card" href="radio.html"><div>🔴</div><b>Radio Soy Tungurahua</b><p>Música, historias y voces del territorio.</p></a><a class="card" href="artistas.html"><div>🎨</div><b>Artistas y creadores</b><p>Conoce a quienes producen cultura hoy en los nueve cantones.</p></a></div></section>'
+              s=s.replace(old,new)
+              s=s.replace('.quick .card:nth-child(4) p{color:#cbd4cf}', '.quick .card:nth-child(4) p{color:#cbd4cf}.quick .card:nth-child(5){background:#f1eefc}')
+              s=s.replace('.quick{grid-template-columns:repeat(4,1fr)}', '.quick{grid-template-columns:repeat(5,minmax(0,1fr))}')
+              s=s.replace('<a href="radio.html">Radio</a> · <a href="catastro.html">Catastro</a>', '<a href="radio.html">Radio</a> · <a href="artistas.html">Artistas</a> · <a href="catastro.html">Catastro</a>')
+          p.write_text(s,encoding='utf-8')
+
+          # EXPLORAR
+          p=Path('explorar.html')
+          s=p.read_text(encoding='utf-8')
+          if 'href="artistas.html">Artistas</a>' not in s:
+              s=s.replace('<button class="radio-link" id="radioPlay" type="button">▶ Radio</button><a class="navlink" href="cantones/">Cantones</a>', '<button class="radio-link" id="radioPlay" type="button">▶ Radio</button><a class="navlink" href="artistas.html">Artistas</a><a class="navlink" href="cantones/">Cantones</a>')
+              s=s.replace("p==='explorar.html'?'🔎 Explorar':'Ver contenido'", "p==='explorar.html'?'🔎 Explorar':p==='artistas.html'?'🎨 Artistas':'Ver contenido'")
+              s=s.replace('<a href="radio.html">Radio</a></div></div></footer>', '<a href="radio.html">Radio</a> · <a href="artistas.html">Artistas</a></div></div></footer>')
+          p.write_text(s,encoding='utf-8')
+
+          # KNOWLEDGE GRAPH
+          p=Path('data/knowledge-graph.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          entities=d.get('entities',[])
+          artist_id='tema:artistas-creadores'
+          if not any(e.get('id')==artist_id for e in entities):
+              entities.append({
+                'id':artist_id,
+                'type':'CollectionPage',
+                'category':'tema',
+                'name':'Artistas y creadores de Tungurahua',
+                'description':'Registro abierto y documentado de artistas, músicos, escritores, creadores visuales, colectivos y oficios creativos vinculados a los nueve cantones de Tungurahua.',
+                'keywords':['artistas','creadores','arte','música','pintura','literatura','lutería','artes visuales','Tungurahua','registro cultural'],
+                'related':['territorio:tungurahua','tema:oficios','tema:identidad-cultural','canton:ambato','canton:banos','canton:cevallos','canton:mocha','canton:patate','canton:pelileo','canton:pillaro','canton:quero','canton:tisaleo'],
+                'pages':['artistas.html']
+              })
+              for e in entities:
+                  if str(e.get('id','')).startswith('canton:'):
+                      rel=e.setdefault('related',[])
+                      if artist_id not in rel: rel.append(artist_id)
+          d['entities']=entities
+          d['updated']='2026-08-29'
+          d['version']='0.1.1'
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding='utf-8')
+          PY
+      - name: Commit integration
+        run: |
+          git config user.name "FitoGirolami"
+          git config user.email "119115891+FitoGirolami@users.noreply.github.com"
+          git add index.html explorar.html data/knowledge-graph.json
+          git diff --cached --quiet || git commit -m "Connect artists registry to portal"
+          git push
