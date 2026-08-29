@@ -1,7 +1,7 @@
 (()=>{
   const DEFAULT_TRACKS=[
     {id:'radio-v1',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3'},
-    {id:'radio-v2',src:'https://soytungurahua.com/assets/audio/radio-soy-tungurahua-2.mp3'}
+    {id:'radio-v2',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua-2.mp3'}
   ];
   const EPOCH=Date.UTC(2026,7,27,0,0,0)/1000;
   const CHANNEL='soy-tungurahua-radio';
