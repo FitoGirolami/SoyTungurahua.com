@@ -1,56 +1,28 @@
 (()=>{
   const DEFAULT_TRACKS=[
-    {id:'radio-v1',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3'},
-    {id:'radio-v2',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua-2.mp3'}
+    {id:'radio-v1',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3',duration:3851.8},
+    {id:'radio-v2',src:'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua-2.mp3',duration:3502.56}
   ];
   const EPOCH=Date.UTC(2026,7,27,0,0,0)/1000;
   const CHANNEL='soy-tungurahua-radio';
-
-  function probe(track){
-    return new Promise(resolve=>{
-      const probeAudio=new Audio();
-      let done=false;
-      const finish=value=>{if(done)return;done=true;clearTimeout(timer);probeAudio.removeAttribute('src');resolve(value)};
-      const timer=setTimeout(()=>finish(null),12000);
-      probeAudio.preload='metadata';
-      probeAudio.addEventListener('loadedmetadata',()=>{
-        const duration=Number(probeAudio.duration);
-        finish(Number.isFinite(duration)&&duration>0?{...track,duration}:null);
-      },{once:true});
-      probeAudio.addEventListener('error',()=>finish(null),{once:true});
-      probeAudio.src=track.src;
-    });
-  }
 
   function mount(options){
     const audio=options.audio;
     const button=options.button;
     if(!audio||!button)return null;
+
     const statusTitle=options.statusTitle||null;
     const statusText=options.statusText||null;
     const onAirLabel=options.onAirLabel||null;
     const volume=options.volume||null;
     const compact=!!options.compact;
     const channel='BroadcastChannel' in window?new BroadcastChannel(CHANNEL):null;
-    let tracks=[];
+    const tracks=(options.tracks||DEFAULT_TRACKS).map(t=>({...t}));
     let activeIndex=-1;
     let switching=false;
 
-    const ready=Promise.all((options.tracks||DEFAULT_TRACKS).map(probe)).then(items=>{
-      tracks=items.filter(Boolean);
-      if(!tracks.length)throw new Error('No hay bloques de radio disponibles');
-      if(statusTitle)statusTitle.textContent='▶ Señal lista';
-      if(statusText)statusText.textContent='Toca “Escuchar radio” para entrar al punto actual de la transmisión.';
-      return tracks;
-    }).catch(err=>{
-      if(statusTitle)statusTitle.textContent='⚠️ No se pudo conectar';
-      if(statusText)statusText.textContent='La transmisión no está disponible en este momento.';
-      throw err;
-    });
-
     function position(){
-      if(!tracks.length)return null;
-      const total=tracks.reduce((sum,t)=>sum+t.duration,0);
+      const total=tracks.reduce((sum,t)=>sum+(Number(t.duration)||0),0);
       if(!total)return null;
       let offset=(((Date.now()/1000)-EPOCH)%total+total)%total;
       for(let i=0;i<tracks.length;i++){
@@ -99,48 +71,94 @@
       }
     }
 
-    function seekCurrent(pos){
-      if(!pos||activeIndex!==pos.index||audio.readyState<1)return;
-      const max=Math.max(0,(Number(audio.duration)||tracks[pos.index].duration)-0.25);
-      const target=Math.min(pos.offset,max);
-      if(Math.abs((audio.currentTime||0)-target)>2)audio.currentTime=target;
+    function updateActiveDuration(){
+      if(activeIndex<0)return;
+      const d=Number(audio.duration);
+      if(Number.isFinite(d)&&d>0)tracks[activeIndex].duration=d;
     }
 
-    async function syncLive(autoplay=false){
-      await ready;
+    function seekToLive(){
+      if(activeIndex<0||audio.readyState<1)return;
+      updateActiveDuration();
       const pos=position();
-      if(!pos)return;
-      if(activeIndex!==pos.index){
-        switching=true;
-        activeIndex=pos.index;
-        audio.src=tracks[pos.index].src;
-        audio.load();
-        const place=()=>{
-          seekCurrent(pos);
-          switching=false;
-          if(autoplay)audio.play().catch(()=>{});
-        };
-        if(audio.readyState>=1)place();
-        else audio.addEventListener('loadedmetadata',place,{once:true});
-        if(autoplay)audio.play().catch(()=>{});
-      }else{
-        seekCurrent(pos);
-        if(autoplay)await audio.play();
+      if(!pos||pos.index!==activeIndex)return;
+      const max=Math.max(0,(Number(audio.duration)||tracks[activeIndex].duration)-0.25);
+      const target=Math.min(pos.offset,max);
+      if(Math.abs((audio.currentTime||0)-target)>2){
+        try{audio.currentTime=target}catch(e){}
       }
     }
 
-    async function toggle(){
+    function setTrack(index){
+      if(index<0||index>=tracks.length)return;
+      if(activeIndex===index&&audio.src)return;
+      switching=true;
+      activeIndex=index;
+      audio.src=tracks[index].src;
+      audio.preload='metadata';
+      audio.load();
+    }
+
+    function startPlaybackFromGesture(){
+      const pos=position();
+      if(!pos)return;
+      setTrack(pos.index);
+
+      // IMPORTANT: play() runs synchronously from the user's tap.
+      // Mobile Safari/Chrome may block playback if we await metadata first.
+      const playPromise=audio.play();
+      if(playPromise&&typeof playPromise.catch==='function'){
+        playPromise.catch(()=>{
+          if(statusTitle)statusTitle.textContent='Toca nuevamente para escuchar';
+          if(statusText)statusText.textContent='El navegador bloqueó el primer intento de audio. Un segundo toque debería habilitarlo.';
+          paint();
+        });
+      }
+
+      if(audio.readyState>=1){
+        seekToLive();
+        switching=false;
+      }else{
+        audio.addEventListener('loadedmetadata',()=>{
+          seekToLive();
+          switching=false;
+        },{once:true});
+      }
+    }
+
+    function syncLive(autoplay=false){
+      const pos=position();
+      if(!pos)return;
+      if(activeIndex!==pos.index){
+        setTrack(pos.index);
+        if(autoplay){
+          const p=audio.play();
+          if(p&&typeof p.catch==='function')p.catch(()=>{});
+        }
+        if(audio.readyState>=1){
+          seekToLive();
+          switching=false;
+        }else{
+          audio.addEventListener('loadedmetadata',()=>{
+            seekToLive();
+            switching=false;
+          },{once:true});
+        }
+      }else{
+        seekToLive();
+        if(autoplay&&audio.paused){
+          const p=audio.play();
+          if(p&&typeof p.catch==='function')p.catch(()=>{});
+        }
+      }
+    }
+
+    function toggle(){
       if(audio.paused){
         if(statusTitle)statusTitle.textContent='Cargando Radio Soy Tungurahua…';
         if(statusText)statusText.textContent='Entrando al punto actual de la programación.';
-        try{
-          await ready;
-          if(channel)channel.postMessage({type:'play'});
-          await syncLive(true);
-        }catch(e){
-          if(statusTitle)statusTitle.textContent='No se pudo iniciar el audio';
-          if(statusText)statusText.textContent='Toca nuevamente para escuchar.';
-        }
+        if(channel)channel.postMessage({type:'play'});
+        startPlaybackFromGesture();
       }else{
         audio.pause();
         if(statusTitle)statusTitle.textContent='Radio pausada';
@@ -150,10 +168,18 @@
     }
 
     button.addEventListener('click',toggle);
+
     if(volume){
       audio.volume=Number(volume.value);
       volume.addEventListener('input',()=>audio.volume=Number(volume.value));
     }
+
+    audio.addEventListener('loadedmetadata',()=>{
+      updateActiveDuration();
+      seekToLive();
+      switching=false;
+    });
+    audio.addEventListener('durationchange',updateActiveDuration);
     audio.addEventListener('play',paint);
     audio.addEventListener('pause',paint);
     audio.addEventListener('ended',()=>syncLive(true));
@@ -162,13 +188,17 @@
       if(statusTitle)statusTitle.textContent='⚠️ No se pudo conectar';
       if(statusText)statusText.textContent='Este bloque de la transmisión no está disponible.';
     });
+
     if(channel){
       channel.addEventListener('message',e=>{
         if(e.data&&e.data.type==='play'&&!audio.paused){audio.pause();paint()}
       });
     }
-    setInterval(()=>{if(!audio.paused)syncLive(false).catch(()=>{})},15000);
-    ready.then(()=>syncLive(false)).catch(()=>{});
+
+    setInterval(()=>{if(!audio.paused)syncLive(false)},15000);
+
+    if(statusTitle)statusTitle.textContent='▶ Señal lista';
+    if(statusText)statusText.textContent='Toca “Escuchar radio” para entrar al punto actual de la transmisión.';
 
     if('mediaSession' in navigator){
       try{
@@ -178,12 +208,15 @@
           album:'Música, historias y voces del territorio',
           artwork:[{src:'https://soytungurahua.com/assets/og-soy-tungurahua-v2.jpg',sizes:'1200x630',type:'image/jpeg'}]
         });
-        navigator.mediaSession.setActionHandler('play',()=>syncLive(true));
+        navigator.mediaSession.setActionHandler('play',()=>{
+          if(audio.paused)startPlaybackFromGesture();
+        });
         navigator.mediaSession.setActionHandler('pause',()=>audio.pause());
       }catch(e){}
     }
+
     paint();
-    return {ready,syncLive,toggle};
+    return {syncLive,toggle};
   }
 
   window.SoyTungurahuaRadio={mount,tracks:DEFAULT_TRACKS};
