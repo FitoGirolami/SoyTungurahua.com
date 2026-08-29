@@ -19,17 +19,14 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
 
           RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-iphone2'
 
           def refresh_radio_script(s):
-              for old in (
-                  'assets/js/radio-live.js?v=20260829-mobile',
-                  'assets/js/radio-live.js?v=20260829-iphone2',
-                  'assets/js/radio-live.js'
-              ):
-                  s = s.replace(old, RADIO_SCRIPT)
-              return s
+              # Collapse any previous cache-bust query, including accidental
+              # duplicated ?v=... values, into one canonical script URL.
+              return re.sub(r'assets/js/radio-live\.js(?:\?[^"\']*)?', RADIO_SCRIPT, s)
 
           # Home page
           p = Path('index.html')
@@ -75,7 +72,7 @@ jobs:
               s = s.replace('<a class="navlink" href="artistas.html">Artistas</a>', '<a class="navlink" href="artistas.html">Artistas</a><a class="navlink" href="artesanos.html">Artesanos</a>', 1)
           p.write_text(s, encoding='utf-8')
 
-          # Dedicated radio page: cache-bust the shared engine too.
+          # Dedicated radio page
           p = Path('radio.html')
           s = refresh_radio_script(p.read_text(encoding='utf-8'))
           p.write_text(s, encoding='utf-8')
@@ -88,6 +85,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes needed"
           else
-            git commit -m "Use iPhone-safe radio and link artisan registry"
+            git commit -m "Normalize iPhone radio script URLs"
             git push
           fi
