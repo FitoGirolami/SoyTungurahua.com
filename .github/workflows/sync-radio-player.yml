@@ -20,7 +20,16 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-mobile'
+          RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-iphone2'
+
+          def refresh_radio_script(s):
+              for old in (
+                  'assets/js/radio-live.js?v=20260829-mobile',
+                  'assets/js/radio-live.js?v=20260829-iphone2',
+                  'assets/js/radio-live.js'
+              ):
+                  s = s.replace(old, RADIO_SCRIPT)
+              return s
 
           # Home page
           p = Path('index.html')
@@ -38,7 +47,11 @@ jobs:
               end += len('</script>')
               replacement = f'''<script src="{RADIO_SCRIPT}"></script>\n<script>\nSoyTungurahuaRadio.mount({{\n  audio:document.getElementById('homeRadioAudio'),\n  button:document.getElementById('homeRadioPlay'),\n  compact:true\n}});\n</script>'''
               s = s[:start] + replacement + s[end:]
-          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
+          s = refresh_radio_script(s)
+          if 'href="artesanos.html">Artesanos</a>' not in s:
+              s = s.replace('<a class="navlink" href="artistas.html">Artistas</a>', '<a class="navlink" href="artistas.html">Artistas</a><a class="navlink" href="artesanos.html">Artesanos</a>', 1)
+          if '👐 Artesanos y oficios' not in s:
+              s = s.replace('<a href="artistas.html">🎨 Artistas y creadores</a>', '<a href="artistas.html">🎨 Artistas y creadores</a><a href="artesanos.html">👐 Artesanos y oficios</a>', 1)
           p.write_text(s, encoding='utf-8')
 
           # Semantic explorer
@@ -57,13 +70,14 @@ jobs:
           insert = f'''<script src="{RADIO_SCRIPT}"></script>\n<script>\nSoyTungurahuaRadio.mount({{\n  audio:document.getElementById('radioAudio'),\n  button:document.getElementById('radioPlay'),\n  compact:true\n}});\n</script>\n'''
           if 'assets/js/radio-live.js' not in s:
               s = s.replace('</body></html>', insert + '</body></html>', 1)
-          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
+          s = refresh_radio_script(s)
+          if 'href="artesanos.html">Artesanos</a>' not in s:
+              s = s.replace('<a class="navlink" href="artistas.html">Artistas</a>', '<a class="navlink" href="artistas.html">Artistas</a><a class="navlink" href="artesanos.html">Artesanos</a>', 1)
           p.write_text(s, encoding='utf-8')
 
           # Dedicated radio page: cache-bust the shared engine too.
           p = Path('radio.html')
-          s = p.read_text(encoding='utf-8')
-          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
+          s = refresh_radio_script(p.read_text(encoding='utf-8'))
           p.write_text(s, encoding='utf-8')
           PY
       - name: Commit portal radio sync
@@ -74,6 +88,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes needed"
           else
-            git commit -m "Use mobile-safe radio engine across portal"
+            git commit -m "Use iPhone-safe radio and link artisan registry"
             git push
           fi
