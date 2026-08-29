@@ -20,6 +20,8 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
+          RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-mobile'
+
           # Home page
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
@@ -34,8 +36,9 @@ jobs:
               if end == -1:
                   raise SystemExit('No se encontró cierre del script de radio en index.html')
               end += len('</script>')
-              replacement = '''<script src="assets/js/radio-live.js"></script>\n<script>\nSoyTungurahuaRadio.mount({\n  audio:document.getElementById('homeRadioAudio'),\n  button:document.getElementById('homeRadioPlay'),\n  compact:true\n});\n</script>'''
+              replacement = f'''<script src="{RADIO_SCRIPT}"></script>\n<script>\nSoyTungurahuaRadio.mount({{\n  audio:document.getElementById('homeRadioAudio'),\n  button:document.getElementById('homeRadioPlay'),\n  compact:true\n}});\n</script>'''
               s = s[:start] + replacement + s[end:]
+          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
           p.write_text(s, encoding='utf-8')
 
           # Semantic explorer
@@ -50,21 +53,27 @@ jobs:
               script_end = s.find('</script>', radio_start)
               if script_end == -1:
                   raise SystemExit('No se encontró cierre del script en explorar.html')
-              # Preserve the semantic-search script and remove only its legacy radio tail.
               s = s[:radio_start] + ';\n' + s[script_end:]
-          insert = '''<script src="assets/js/radio-live.js"></script>\n<script>\nSoyTungurahuaRadio.mount({\n  audio:document.getElementById('radioAudio'),\n  button:document.getElementById('radioPlay'),\n  compact:true\n});\n</script>\n'''
+          insert = f'''<script src="{RADIO_SCRIPT}"></script>\n<script>\nSoyTungurahuaRadio.mount({{\n  audio:document.getElementById('radioAudio'),\n  button:document.getElementById('radioPlay'),\n  compact:true\n}});\n</script>\n'''
           if 'assets/js/radio-live.js' not in s:
               s = s.replace('</body></html>', insert + '</body></html>', 1)
+          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
+          p.write_text(s, encoding='utf-8')
+
+          # Dedicated radio page: cache-bust the shared engine too.
+          p = Path('radio.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('assets/js/radio-live.js"></script>', RADIO_SCRIPT + '"></script>')
           p.write_text(s, encoding='utf-8')
           PY
       - name: Commit portal radio sync
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html explorar.html
+          git add index.html explorar.html radio.html
           if git diff --cached --quiet; then
             echo "No changes needed"
           else
-            git commit -m "Use continuous playlist radio across portal"
+            git commit -m "Use mobile-safe radio engine across portal"
             git push
           fi
