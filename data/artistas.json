@@ -1,0 +1,312 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-29",
+  "title": "Artistas y creadores de Tungurahua",
+  "description": "Registro abierto y documentado de artistas, músicos, escritores, creadores visuales, colectivos y oficios creativos vinculados a los nueve cantones de Tungurahua.",
+  "status_labels": {
+    "publicado": "Registro publicado",
+    "revision": "Sujeto a revisión",
+    "abierto": "Proceso abierto de registro y publicación"
+  },
+  "cantons": [
+    {"name":"Ambato","status":"publicado","note":"Primera selección publicada; registro en ampliación."},
+    {"name":"Baños de Agua Santa","status":"publicado","note":"Primera selección publicada; registro en ampliación permanente."},
+    {"name":"Cevallos","status":"abierto","note":"Proceso abierto para ampliar biografías, actividad reciente y documentación territorial."},
+    {"name":"Mocha","status":"abierto","note":"Proceso abierto para identificar y documentar más artistas y creadores del cantón."},
+    {"name":"Patate","status":"abierto","note":"Proceso abierto para ampliar el registro individual de artistas y creadores."},
+    {"name":"San Pedro de Pelileo","status":"publicado","note":"Primera selección publicada con especial atención a Salasaka; registro en ampliación."},
+    {"name":"Santiago de Píllaro","status":"publicado","note":"Primera selección publicada; registro en ampliación."},
+    {"name":"Quero","status":"abierto","note":"Proceso abierto para ampliar creación artística, oficios de autor y producción contemporánea."},
+    {"name":"Tisaleo","status":"publicado","note":"Primera selección publicada; registro en ampliación."}
+  ],
+  "artists": [
+    {
+      "id":"ambato-sebastian-andy",
+      "name":"Sebastián Andy",
+      "canton":"Ambato",
+      "disciplines":["Música","Producción electrónica"],
+      "kind":"Artista / productor",
+      "status":"publicado",
+      "bio":"Productor vinculado a Ambato que trabaja cruces entre repertorios locales y producción electrónica contemporánea. En 2026 presentó una reinterpretación electrónica de ‘Ambato tierra de flores’.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"La Hora Tungurahua, 2026","url":"https://www.lahora.com.ec/tungurahua/sebastian-andy-reinterpreta-ambato-tierra-de-flores-en-musica-electronica-20260211-0024.html"}]
+    },
+    {
+      "id":"ambato-carmen-saa-alvarez",
+      "name":"Carmen Saá Álvarez",
+      "canton":"Ambato",
+      "disciplines":["Pintura","Literatura","Música"],
+      "kind":"Artista interdisciplinar",
+      "status":"publicado",
+      "bio":"Creadora nacida en Ambato con trayectoria vinculada a las artes, la escritura y la música. En 2026 se documentó la incorporación de parte de su obra pictórica a una colección pública provincial.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"La Hora Tungurahua, 2026","url":"https://www.lahora.com.ec/tungurahua/exreina-de-ambato-dona-parte-de-su-obra-artistica-al-gobierno-provincial-de-tungurahua-20260301-0009.html"}]
+    },
+    {
+      "id":"ambato-noe-mayorga-ortiz",
+      "name":"Noé Mayorga Ortiz",
+      "canton":"Ambato",
+      "disciplines":["Artes visuales","Gestión cultural"],
+      "kind":"Artista visual",
+      "status":"revision",
+      "bio":"Artista y gestor vinculado a la escena visual de Tungurahua. La ficha permanece sujeta a revisión para completar actividad reciente, biografía y documentación directa.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    },
+    {
+      "id":"banos-edguin-barrera-rodriguez",
+      "name":"Edguin Barrera Rodríguez",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Pintura","Acuarela","Dibujo","Gráfica"],
+      "kind":"Artista visual",
+      "status":"publicado",
+      "bio":"Artista nacido en Baños de Agua Santa en 1958, con una extensa trayectoria en pintura, acuarela, dibujo y gráfica. En 2026 recibió la Condecoración Provincia de Tungurahua al Mérito Cívico.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Gobierno Provincial de Tungurahua, 2026","url":"https://www.tungurahua.gob.ec/tungurahua-honra-a-sus-referentes-cultura-fe-y-comunicacion-seran-reconocidas-en-sesion-solemne-de-provincializacion/"}]
+    },
+    {
+      "id":"banos-marcelo-barahona",
+      "name":"Marcelo Barahona",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Pintura al óleo","Paisajismo","Arte abstracto","Arte naïf"],
+      "kind":"Artista visual",
+      "status":"publicado",
+      "bio":"Pintor nacido en Baños de Agua Santa. Su trayectoria está asociada al óleo y a lenguajes que incluyen paisaje, abstracción, temática religiosa y aproximaciones naïf.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/galerias-centros-culturales/galeria-arte-barahona-a8o2itjym"}]
+    },
+    {
+      "id":"banos-wilfrido-acosta-pineda",
+      "name":"Wilfrido Acosta Pineda",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Grabado","Pintura","Gráfica","Poesía"],
+      "kind":"Artista visual / escritor",
+      "status":"publicado",
+      "bio":"Artista vinculado a Río Blanco, cantón Baños, con trayectoria en grabado, gráfica, pintura y poesía. Su trabajo forma parte de la memoria artística contemporánea del cantón.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"El Universo","url":"https://www.eluniverso.com/vida-estilo/2015/02/14/nota/4553336/wilfrido-acosta-su-pasion-grabado/"}]
+    },
+    {
+      "id":"banos-yajaira-rueda",
+      "name":"Yajaira Rueda",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Artes visuales","Pintura"],
+      "kind":"Artista visual",
+      "status":"revision",
+      "bio":"Artista identificada en fuentes recientes como vinculada a Baños de Agua Santa. La ficha queda sujeta a revisión para confirmar grafía del nombre, actividad actual y biografía completa.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Expreso, 2024","url":"https://www.expreso.ec/provincias/huillacuna-historia-ancestral-expuesta-galeria-211918.html"}]
+    },
+    {
+      "id":"banos-fito-girolami",
+      "name":"Fito Girolami",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Creación escultórica","Instalación","Arte territorial","Escritura"],
+      "kind":"Artista / creador interdisciplinar",
+      "status":"publicado",
+      "bio":"Artista y creador radicado en Baños de Agua Santa, con una práctica desarrollada desde el territorio que cruza obra material, instalación, escritura, imaginarios contemporáneos y producción cultural.",
+      "photo_status":"Fotografía propia o autorizada por incorporar",
+      "sources":[{"label":"Sitio del artista","url":"https://fitogirolami.art/"}]
+    },
+    {
+      "id":"banos-catalina-lucz-ligeti",
+      "name":"Catalina Lucz-Ligeti",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Artes visuales","Creación escultórica","Instalación"],
+      "kind":"Artista / creadora interdisciplinar",
+      "status":"publicado",
+      "bio":"Artista chilena radicada en Baños de Agua Santa, donde desarrolla obra y proyectos culturales vinculados a creación visual, escultura, instalación e imaginarios contemporáneos.",
+      "photo_status":"Fotografía propia o autorizada por incorporar",
+      "sources":[{"label":"La Casa del Duende","url":"https://lacasadelduende.art/"}]
+    },
+    {
+      "id":"banos-desorden",
+      "name":"Desorden",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Música contemporánea"],
+      "kind":"Agrupación musical",
+      "status":"publicado",
+      "bio":"Agrupación musical identificada en fuentes de 2026 como originaria de Baños de Agua Santa y activa en circuitos musicales contemporáneos de la provincia.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"La Veci, 2026","url":"https://laveci.com/noticia/miel-encendera-ambato-con-un-concierto-electronico-e-inmersivo"}]
+    },
+    {
+      "id":"banos-estefania-manzano",
+      "name":"Estefanía Manzano",
+      "canton":"Baños de Agua Santa",
+      "disciplines":["Música","Canción"],
+      "kind":"Cantautora / intérprete",
+      "status":"revision",
+      "bio":"Artista musical vinculada a actividades culturales recientes en Baños. La ficha queda sujeta a revisión para precisar nacimiento o residencia, trayectoria local y datos biográficos.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"La Hora Tungurahua, 2026","url":"https://www.lahora.com.ec/tungurahua/banos-rendira-homenaje-al-legado-musical-de-nicolas-fiallos-20260723-0064.html"}]
+    },
+    {
+      "id":"cevallos-manuel-martinez",
+      "name":"Manuel Martínez",
+      "canton":"Cevallos",
+      "disciplines":["Música popular","Interpretación"],
+      "kind":"Músico / intérprete",
+      "status":"revision",
+      "bio":"Intérprete cevallense asociado a una práctica musical singular con hoja de capulí y repertorio popular. La ficha requiere actualización de actividad reciente y documentación directa.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    },
+    {
+      "id":"cevallos-franklin-naranjo-gamboa",
+      "name":"Franklin Naranjo Gamboa",
+      "canton":"Cevallos",
+      "disciplines":["Composición musical"],
+      "kind":"Compositor",
+      "status":"revision",
+      "bio":"Compositor identificado en documentación oficial del cantón. La ficha permanece sujeta a revisión para completar biografía, vínculo territorial y actividad actual.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"GAD Municipal de Cevallos","url":"https://www.cevallos.gob.ec/simbolos/"}]
+    },
+    {
+      "id":"mocha-hermanos-ledesma",
+      "name":"Hermanos Ledesma",
+      "canton":"Mocha",
+      "disciplines":["Música ecuatoriana","Pasillo"],
+      "kind":"Dúo / agrupación musical",
+      "status":"publicado",
+      "bio":"Carlos y Luis Miguel Ledesma, vinculados a Pinguilí, cantón Mocha, desarrollan una propuesta ligada al pasillo y otros géneros de la música ecuatoriana. Su actividad pública continúa documentada en 2026.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"El Telégrafo","url":"https://www.eltelegrafo.com.ec/noticias/regional-centro/1/hermanosledesma"}]
+    },
+    {
+      "id":"patate-geovanny-mosquera",
+      "name":"Geovanny Mosquera",
+      "canton":"Patate",
+      "disciplines":["Pintura","Muralismo"],
+      "kind":"Artista visual",
+      "status":"publicado",
+      "bio":"Artista de Patate vinculado a pintura y muralismo. Su obra pública representa memoria, vida cotidiana, gastronomía y elementos del Patate antiguo y contemporáneo.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/patate/calles-barrios/pasaje-soria-aglyknfq5"}]
+    },
+    {
+      "id":"pelileo-heriberto-chango",
+      "name":"Heriberto Chango",
+      "canton":"San Pedro de Pelileo",
+      "territory":"Salasaka",
+      "disciplines":["Artes visuales","Fibras y materiales naturales"],
+      "kind":"Artista / creador",
+      "status":"publicado",
+      "bio":"Creador de Salasaka cuya práctica visual trabaja con hojas, fibras, cabuya y otros materiales vinculados al territorio para construir imágenes, personajes y paisajes.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pelileo/gestores-artesanales/nawka-a396qa044"}]
+    },
+    {
+      "id":"pelileo-jose-mazaquiza",
+      "name":"José Mazaquiza",
+      "canton":"San Pedro de Pelileo",
+      "territory":"Salasaka",
+      "disciplines":["Música","Tejido","Creación cultural"],
+      "kind":"Creador interdisciplinar",
+      "status":"revision",
+      "bio":"Creador vinculado a Salasaka y a diversas expresiones culturales. La ficha queda sujeta a revisión para completar biografía, práctica actual y fuentes directas.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    },
+    {
+      "id":"pillaro-gabriel-arias-robalino",
+      "name":"Gabriel Alejandro Arias Robalino",
+      "canton":"Santiago de Píllaro",
+      "disciplines":["Pintura","Artes visuales"],
+      "kind":"Artista visual",
+      "status":"publicado",
+      "bio":"Artista de Píllaro. Su obra ‘La Herencia’ obtuvo el primer lugar del Salón de Pintura de Noviembre 2025, consolidando una presencia reciente dentro de la escena visual provincial.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"La Hora Tungurahua","url":"https://www.lahora.com.ec/tungurahua/ambato-convocatoria-abierta-para-el-salon-de-pintura-de-noviembre-20260805-0032.html"}]
+    },
+    {
+      "id":"pillaro-angel-velasco",
+      "name":"Ángel Velasco",
+      "canton":"Santiago de Píllaro",
+      "disciplines":["Máscara","Arte popular","Creación artesanal"],
+      "kind":"Mascarero / creador",
+      "status":"publicado",
+      "bio":"Creador pillareño asociado al oficio de la máscara y a la cultura material vinculada a la Diablada Pillareña. Su práctica constituye una referencia del trabajo artesanal de autor del cantón.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pillaro/gestores-artesanales/mascaras-diablos-taller-angel-velasco-au9o8ejij"}]
+    },
+    {
+      "id":"pillaro-italo-espin-haro",
+      "name":"Ítalo Espín Haro",
+      "canton":"Santiago de Píllaro",
+      "disciplines":["Artes plásticas","Gestión cultural"],
+      "kind":"Artista visual / gestor",
+      "status":"revision",
+      "bio":"Artista plástico y gestor vinculado a Píllaro. La ficha permanece sujeta a revisión para completar actividad reciente y fuentes biográficas directas.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    },
+    {
+      "id":"quero-mentor-moreta",
+      "name":"Méntor Arménides Moreta",
+      "canton":"Quero",
+      "disciplines":["Madera","Objetos de autor","Creación artesanal"],
+      "kind":"Creador / artesano de autor",
+      "status":"publicado",
+      "bio":"Creador de Quero que transforma madera mediante procesos artesanales y trabajo de taller. Se incorpora al registro como oficio creativo y producción de autor vinculada al territorio.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/artesanias-madera-moreta-a51bu4nli"}]
+    },
+    {
+      "id":"quero-guillermina-villalba",
+      "name":"Guillermina Villalba",
+      "canton":"Quero",
+      "disciplines":["Bordado","Dibujo","Arte textil"],
+      "kind":"Creadora / artesana de autor",
+      "status":"publicado",
+      "bio":"Creadora de Quero vinculada al bordado manual, el dibujo y la composición textil. Su práctica se registra como producción creativa de autor y conocimiento técnico territorial.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/mantos-bordados-quero-agscwli8r"}]
+    },
+    {
+      "id":"quero-angel-barreno",
+      "name":"Ángel Barreno",
+      "canton":"Quero",
+      "disciplines":["Talla en madera","Creación artesanal"],
+      "kind":"Creador / artesano de autor",
+      "status":"revision",
+      "bio":"Creador vinculado a la talla manual en madera en Quero. La ficha permanece sujeta a revisión para ampliar biografía, trayectoria y documentación directa.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    },
+    {
+      "id":"tisaleo-anibal-yugcha",
+      "name":"Aníbal Yugcha",
+      "canton":"Tisaleo",
+      "disciplines":["Lutería","Guitarra","Requinto"],
+      "kind":"Lutier / creador",
+      "status":"publicado",
+      "bio":"Lutier tisaleño dedicado a la construcción artesanal de guitarras y requintos. Su práctica conecta madera, acústica, oficio y una identidad creativa estrechamente asociada al cantón.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-artesanales-tisaleo-zaid-ai46vrfez"}]
+    },
+    {
+      "id":"tisaleo-wilson-labre",
+      "name":"Wilson Labre",
+      "canton":"Tisaleo",
+      "disciplines":["Lutería","Instrumentos de cuerda"],
+      "kind":"Lutier / creador",
+      "status":"publicado",
+      "bio":"Creador tisaleño vinculado a la fabricación artesanal de instrumentos. Se incorpora al registro dentro de la línea de lutería y oficios creativos de autor.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[{"label":"Turismo Tungurahua","url":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-juguete-tisaleo-don-wilson-ax4t60t3t"}]
+    },
+    {
+      "id":"tisaleo-victor-hugo-navas-lopez",
+      "name":"Víctor Hugo Navas López",
+      "canton":"Tisaleo",
+      "disciplines":["Literatura","Poesía","Crónica"],
+      "kind":"Escritor",
+      "status":"revision",
+      "bio":"Autor vinculado a la escritura, poesía, crónica y memoria cultural. La ficha queda sujeta a revisión para completar actividad reciente y documentación biográfica.",
+      "photo_status":"Pendiente de fotografía autorizada",
+      "sources":[]
+    }
+  ]
+}
