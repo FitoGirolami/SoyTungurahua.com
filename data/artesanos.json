@@ -1,0 +1,129 @@
+{
+  "version":"1.0",
+  "updated":"2026-08-29",
+  "title":"Artesanos y oficios de Tungurahua",
+  "description":"Registro abierto y documentado de artesanos, talleres, colectivos y oficios vinculados a los nueve cantones de Tungurahua.",
+  "status_labels":{"publicado":"Registro publicado","revision":"Sujeto a revisión","abierto":"Proceso abierto de registro y publicación"},
+  "cantons":[
+    {"name":"Ambato","status":"publicado","note":"Primera selección documentada; registro en ampliación."},
+    {"name":"Baños de Agua Santa","status":"publicado","note":"Primera selección documentada; se continúa identificando artesanos individuales y talleres."},
+    {"name":"Cevallos","status":"publicado","note":"Primera ficha publicada; sector calzado y otros oficios en ampliación."},
+    {"name":"Mocha","status":"publicado","note":"Primera selección publicada; los colectivos sin nombres individuales permanecen en proceso abierto."},
+    {"name":"Patate","status":"publicado","note":"Primera ficha individual publicada; registro abierto para nuevas incorporaciones."},
+    {"name":"San Pedro de Pelileo","status":"publicado","note":"Primera selección con atención especial a Salasaka y a prácticas ligadas a fibras y tejido."},
+    {"name":"Santiago de Píllaro","status":"publicado","note":"Primera selección publicada; máscaras, cuero y fibras en ampliación."},
+    {"name":"Quero","status":"publicado","note":"Madera y bordado documentados; registro abierto para otros oficios."},
+    {"name":"Tisaleo","status":"publicado","note":"Lutería y zapatería documentadas; registro en ampliación."}
+  ],
+  "artisans":[
+    {
+      "id":"ambato-pilar-munoz-incaica","name":"Pilar Muñoz","canton":"Ambato","territory":"Ficoa","workshop":"Alfombras La Incaica","crafts":["Alfombras","Tejido manual"],"kind":"Artesana / taller","status":"publicado",
+      "bio":"Responsable de Alfombras La Incaica en Ambato, espacio documentado por la plataforma turística provincial por la elaboración de alfombras realizadas totalmente a mano.",
+      "photo":"https://img.goraymi.com/2019/09/13/ac923c1d19ea3092c74f674a5cae25fd_xl.jpg","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/ambato/gestores-artesanales/alfombras-incaica-ayxdcw8as",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/ambato/gestores-artesanales/alfombras-incaica-ayxdcw8as"}]
+    },
+    {
+      "id":"ambato-paola-garces-maru-art","name":"Paola Garcés","canton":"Ambato","workshop":"Maru Art Mujeres Haciendo Arte","crafts":["Madera MDF","Decoración artesanal"],"kind":"Artesana / creadora","status":"publicado",
+      "bio":"Propietaria de Maru Art, emprendimiento familiar de Ambato dedicado a objetos decorativos hechos a mano en madera MDF y a la transmisión de conocimientos mediante capacitaciones.",
+      "photo":"https://img.goraymi.com/2020/06/11/ab2ca6482e04f3457860b63e5f986ab1_xl.jpg","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/ambato/gestores-artesanales/maru-art-mujeres-haciendo-arte-ag5byp4ld",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/ambato/gestores-artesanales/maru-art-mujeres-haciendo-arte-ag5byp4ld"}]
+    },
+    {
+      "id":"ambato-ines-lopez-makiruray","name":"Inés del Carmen López","canton":"Ambato","workshop":"Makiruray Kuna","crafts":["Cáscara de naranja","Semillas","Bisutería","Figuras"],"kind":"Artesana","status":"publicado",
+      "bio":"Artesana oriunda de Ambato que trabaja manualmente con cáscara de naranja, toronja, mandarina y semillas, desarrollando bisutería, figuras, cestos y objetos decorativos.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/ambato/gestores-artesanales/makiruray-kuna-artesanias-cascara-naranja-a3hirsvzi"}]
+    },
+    {
+      "id":"banos-nery-guachizaca","name":"Nery Guachizaca","canton":"Baños de Agua Santa","territory":"Río Verde · Pasaje Cóndor Paccha","workshop":"Arte Nery","crafts":["Joyería artesanal","Minerales","Metales","Cerámica"],"kind":"Artesano / joyero","status":"publicado",
+      "bio":"Artesano radicado en Río Verde que desarrolla joyería hecha a mano con minerales, plata, cobre, bronce y cerámica. Su taller forma parte del pasaje artesanal Cóndor Paccha.",
+      "photo":"https://img.goraymi.com/2025/01/07/6a9b607ed5a3fee4d7fb9d02c528fa32.png","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/arte-nery-adsrjpepm",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/arte-nery-adsrjpepm"}]
+    },
+    {
+      "id":"banos-jose-lara","name":"José Lara","canton":"Baños de Agua Santa","crafts":["Talla en balsa","Pirograbado","Pintura"],"kind":"Artesano tallador","status":"publicado",
+      "bio":"Artesano documentado por su trabajo de talla y pirograbado de aves sobre madera de balsa, representando especies de la diversidad ecuatoriana.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/aves-talladas-balsa-a082023ke?lang=es"}]
+    },
+    {
+      "id":"banos-jacinto-eduardo-guevara","name":"Jacinto Eduardo Guevara","canton":"Baños de Agua Santa","workshop":"Taller de guitarras Guevara","crafts":["Lutería","Guitarras","Charangos","Madera"],"kind":"Lutier","status":"publicado",
+      "bio":"Lutier de una tradición familiar documentada desde comienzos del siglo XX. Fabrica guitarras clásicas, acústicas, charangos y otros instrumentos desde su taller en Baños.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/taller-guitarras-guevara-age40nk1e"}]
+    },
+    {
+      "id":"cevallos-gustavo-martinez-gusmar","name":"Gustavo Martínez","canton":"Cevallos","workshop":"Calzado Gus-Mar","crafts":["Calzado","Cuero"],"kind":"Artesano / productor de calzado","status":"publicado",
+      "bio":"Responsable de Gus-Mar en Cevallos, taller documentado por su confección local de calzado y por permitir conocer el proceso de producción.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/cevallos/gestores-artesanales/fabrica-calzado-gusmar-awbanhm10"}]
+    },
+    {
+      "id":"mocha-rigoberto-espinoza","name":"Rigoberto Espinoza","canton":"Mocha","workshop":"Moyancalza","crafts":["Calzado de cuero"],"kind":"Artesano / productor de calzado","status":"publicado",
+      "bio":"Artesano vinculado a Moyancalza, taller de Mocha dedicado a elaborar calzado de cuero para damas, caballeros y niños con producción realizada en el cantón.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/mocha/gestores-artesanales/moyancalza-calzado-mocha-azz2euqp0"}]
+    },
+    {
+      "id":"mocha-pampa-verde","name":"Pampa Verde","canton":"Mocha","territory":"El Porvenir","workshop":"Asociación de Servicios Turísticos Comunitarios Pampa Verde","crafts":["Masapán","Figuras","Memoria gastronómica"],"kind":"Colectivo artesanal","status":"abierto",
+      "bio":"Colectivo documentado por la elaboración de figuras en masapán relacionadas con la gastronomía y productos del cantón. El registro permanece abierto para identificar y acreditar individualmente a sus artesanas y artesanos.",
+      "photo":"https://img.goraymi.com/2019/09/17/643f20b5f8133e62fb88732fef4ab877_xl.jpg","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/mocha/gestores-artesanales/asociacion-servicios-turisticos-comunitarios-pampa-verde-mocha-av4z15i3p",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/mocha/gestores-artesanales/asociacion-servicios-turisticos-comunitarios-pampa-verde-mocha-av4z15i3p"}]
+    },
+    {
+      "id":"patate-lidia-rodriguez","name":"Lidia Rodríguez","canton":"Patate","territory":"Poatug","crafts":["Crochet","Carteras","Bolsos","Shigras"],"kind":"Artesana textil","status":"publicado",
+      "bio":"Artesana de Patate documentada por la elaboración manual mediante crochet de gorras, bufandas, carteras, bolsos y shigras.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/patate/gestores-artesanales/carteras-shigras-lidia-rodriguez-aosuialev"}]
+    },
+    {
+      "id":"pelileo-baltazar-jimenez","name":"Baltazar Jiménez","canton":"San Pedro de Pelileo","territory":"Salasaka","workshop":"Tayta Berna","crafts":["Tejido","Sandalias","Tinturado natural"],"kind":"Artesano / tejedor","status":"publicado",
+      "bio":"Artesano Salasaka vinculado al tejido y al desarrollo de sandalias que incorporan tejidos tradicionales, tinturado y diseño contemporáneo.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pelileo/gestores-artesanales/tayta-berna-aspfxw9jq"}]
+    },
+    {
+      "id":"pelileo-heriberto-chango","name":"Heriberto Chango","canton":"San Pedro de Pelileo","territory":"Salasaka","workshop":"Ñawka","crafts":["Cabuya","Fibras naturales","Hojas","Tejido","Arte aplicado"],"kind":"Artesano / creador","status":"publicado",
+      "bio":"Creador Salasaka que trabaja hojas, cabuya y fibras naturales en cuadros y objetos, combinando conocimientos transmitidos familiarmente con propuestas contemporáneas.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pelileo/gestores-artesanales/nawka-a396qa044"}]
+    },
+    {
+      "id":"pillaro-angel-velasco","name":"Ángel Gabriel Velasco Esparza","canton":"Santiago de Píllaro","workshop":"Taller Ángel Velasco","crafts":["Máscaras","Cartón","Modelado","Diablada Pillareña"],"kind":"Mascarero","status":"publicado",
+      "bio":"Mascarero pillareño cuya trayectoria está vinculada a la elaboración artesanal de máscaras, coronillas y otros elementos asociados a la Diablada Pillareña.",
+      "photo":"https://img.goraymi.com/2020/02/11/ea03e3cfe82c2567fa17a3f8811687fa.png","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/pillaro/gestores-artesanales/mascaras-diablos-taller-angel-velasco-au9o8ejij",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pillaro/gestores-artesanales/mascaras-diablos-taller-angel-velasco-au9o8ejij"}]
+    },
+    {
+      "id":"pillaro-nelson-chiliquinga","name":"Nelson Chiliquinga","canton":"Santiago de Píllaro","workshop":"Aarón Arte en Cuero","crafts":["Cuero","Repujado","Máscaras","Accesorios"],"kind":"Artesano del cuero","status":"publicado",
+      "bio":"Artesano radicado en Píllaro con décadas de trabajo en cuero, incluyendo repujado tradicional, máscaras, cinturones, billeteras y correas para instrumentos.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pillaro/gestores-artesanales/aaron-arte-cuero-a57rz2f6m"}]
+    },
+    {
+      "id":"pillaro-jose-gomez","name":"José Gómez","canton":"Santiago de Píllaro","territory":"Emilio María Terán","workshop":"Prosecc Flor","crafts":["Flores secas","Fibras vegetales","Arreglos"],"kind":"Artesano / productor creativo","status":"publicado",
+      "bio":"Continuador, junto a su familia, de una práctica iniciada por Delia Jácome. Prosecc Flor transforma flores, espigas y materiales vegetales en piezas y arreglos decorativos.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/pillaro/gestores-artesanales/artesanias-flores-secas-pillaro-prosecc-flor-a2dtqi55p"}]
+    },
+    {
+      "id":"quero-mentor-moreta","name":"Méntor Arménides Moreta","canton":"Quero","workshop":"Artesanías de madera Moreta","crafts":["Madera","Cucharas","Bateas","Utensilios"],"kind":"Artesano de la madera","status":"publicado",
+      "bio":"Artesano residente de Quero con una práctica familiar de décadas en la elaboración de cucharas, bateas, tablas, morteros y otros utensilios de madera.",
+      "photo":"https://img.goraymi.com/2019/11/12/25fdbeb71dd61e912d0af0fedf625704_xl.jpg","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/artesanias-madera-moreta-a51bu4nli",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/artesanias-madera-moreta-a51bu4nli"}]
+    },
+    {
+      "id":"quero-guillermina-villalba","name":"Guillermina Villalba","canton":"Quero","workshop":"El Manto Sagrado","crafts":["Bordado","Mantos","Capas","Colchas"],"kind":"Artesana bordadora","status":"publicado",
+      "bio":"Bordadora de Quero que aprendió el oficio desde los 14 años y desarrolló una extensa práctica en mantos, capas y colchas, combinando dibujo, costura y aplicación ornamental.",
+      "photo":"https://img.goraymi.com/2020/02/13/1181716178d94a7242e088481db79dc8.png","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/mantos-bordados-quero-agscwli8r",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/quero/gestores-artesanales/mantos-bordados-quero-agscwli8r"}]
+    },
+    {
+      "id":"tisaleo-anibal-yugcha","name":"Aníbal Yugcha","canton":"Tisaleo","workshop":"ZAID","crafts":["Lutería","Guitarras","Requintos","Madera"],"kind":"Lutier / guitarrero","status":"publicado",
+      "bio":"Guitarrero tisaleño que aprendió el oficio con Néstor Labre y posteriormente abrió el taller ZAID, dedicado a construir y perfeccionar instrumentos de cuerda.",
+      "photo":"https://img.goraymi.com/2020/02/11/aa12fa5aa574583a0587133850d7beab.png","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-artesanales-tisaleo-zaid-ai46vrfez",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-artesanales-tisaleo-zaid-ai46vrfez"}]
+    },
+    {
+      "id":"tisaleo-wilson-labre","name":"Wilson Labre","canton":"Tisaleo","workshop":"Taller Don Wilson","crafts":["Guitarras de juguete","Madera","Lutería popular"],"kind":"Artesano / guitarrero","status":"publicado",
+      "bio":"Integrante de una genealogía de guitarreros de Tisaleo. Su taller se especializa en guitarras pequeñas de juguete y en la transmisión del oficio a otras personas.",
+      "photo":"https://img.goraymi.com/2019/11/06/1ab07ee3eebb094fdb5e7e4eec807602_xl.jpg","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-juguete-tisaleo-don-wilson-ax4t60t3t",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/gestores-artesanales/guitarras-juguete-tisaleo-don-wilson-ax4t60t3t"}]
+    },
+    {
+      "id":"tisaleo-jorge-tigse","name":"Jorge Tigse","canton":"Tisaleo","crafts":["Zapatería","Calzado","Cuero"],"kind":"Artesano zapatero","status":"publicado",
+      "bio":"Artesano de Tisaleo que aprendió zapatería desde los 14 años y mantiene un taller familiar en el que distintas fases del calzado continúan realizándose manualmente.",
+      "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/tisaleo/artesanias-cuero/calzado-tisaleo-ac57ukzqz"}]
+    }
+  ]
+}
