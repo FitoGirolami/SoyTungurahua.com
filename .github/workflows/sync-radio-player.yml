@@ -21,20 +21,23 @@ jobs:
           from pathlib import Path
           import re
 
-          RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-iphone2'
+          RADIO_SCRIPT = 'assets/js/radio-live.js?v=20260829-iphone3'
+          RADIO_URL = 'https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3'
 
           def refresh_radio_script(s):
-              # Collapse any previous cache-bust query, including accidental
-              # duplicated ?v=... values, into one canonical script URL.
               return re.sub(r'assets/js/radio-live\.js(?:\?[^"\']*)?', RADIO_SCRIPT, s)
+
+          def static_audio(s, audio_id):
+              pattern = rf'<audio id="{re.escape(audio_id)}"[^>]*>(?:<source[^>]*></source>|<source[^>]*>)?</audio>'
+              replacement = f'<audio id="{audio_id}" preload="auto" loop playsinline><source src="{RADIO_URL}" type="audio/mpeg"></audio>'
+              if re.search(pattern, s):
+                  return re.sub(pattern, replacement, s, count=1)
+              return s
 
           # Home page
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
-          old_audio = '<audio id="homeRadioAudio" preload="metadata" loop playsinline><source src="https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3" type="audio/mpeg"></audio>'
-          new_audio = '<audio id="homeRadioAudio" preload="metadata" playsinline></audio>'
-          if old_audio in s:
-              s = s.replace(old_audio, new_audio, 1)
+          s = static_audio(s, 'homeRadioAudio')
           marker = "<script>\nconst homeRadio=document.getElementById('homeRadioAudio');"
           start = s.find(marker)
           if start != -1:
@@ -54,10 +57,7 @@ jobs:
           # Semantic explorer
           p = Path('explorar.html')
           s = p.read_text(encoding='utf-8')
-          old_audio = '<audio id="radioAudio" preload="metadata" loop playsinline><source src="https://github.com/FitoGirolami/SoyTungurahua.com/releases/download/radio-v1/radio-soy-tungurahua.mp3" type="audio/mpeg"></audio>'
-          new_audio = '<audio id="radioAudio" preload="metadata" playsinline></audio>'
-          if old_audio in s:
-              s = s.replace(old_audio, new_audio, 1)
+          s = static_audio(s, 'radioAudio')
           radio_start = s.find(";const radio=document.getElementById('radioAudio')")
           if radio_start != -1:
               script_end = s.find('</script>', radio_start)
@@ -74,7 +74,9 @@ jobs:
 
           # Dedicated radio page
           p = Path('radio.html')
-          s = refresh_radio_script(p.read_text(encoding='utf-8'))
+          s = p.read_text(encoding='utf-8')
+          s = static_audio(s, 'radioAudio')
+          s = refresh_radio_script(s)
           p.write_text(s, encoding='utf-8')
           PY
       - name: Commit portal radio sync
@@ -85,6 +87,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes needed"
           else
-            git commit -m "Normalize iPhone radio script URLs"
+            git commit -m "Restore static iPhone radio source"
             git push
           fi
