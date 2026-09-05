@@ -37,6 +37,13 @@
       "id":"banos-nery-guachizaca","name":"Nery Guachizaca","canton":"Baños de Agua Santa","territory":"Río Verde · Pasaje Cóndor Paccha","workshop":"Arte Nery","crafts":["Joyería artesanal","Minerales","Metales","Cerámica"],"kind":"Artesano / joyero","status":"publicado",
       "bio":"Artesano radicado en Río Verde que desarrolla joyería hecha a mano con minerales, plata, cobre, bronce y cerámica. Su taller forma parte del pasaje artesanal Cóndor Paccha.",
       "photo":"https://img.goraymi.com/2025/01/07/6a9b607ed5a3fee4d7fb9d02c528fa32.png","photo_credit":"Tungurahua Turismo / Gobierno Provincial de Tungurahua","photo_source":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/arte-nery-adsrjpepm",
+      "gallery":[
+        {"src":"assets/photos/condor-paccha/condor-paccha-rio-verde-01.webp","alt":"Artesanos y visitantes en el Pasaje Cóndor Paccha de Río Verde"},
+        {"src":"assets/photos/condor-paccha/condor-paccha-rio-verde-02.webp","alt":"Puesto de artesanías y recuerdos en el Pasaje Cóndor Paccha"},
+        {"src":"assets/photos/condor-paccha/condor-paccha-rio-verde-03.webp","alt":"Atención artesanal en un puesto del Pasaje Cóndor Paccha"},
+        {"src":"assets/photos/condor-paccha/condor-paccha-rio-verde-04.webp","alt":"Exhibición de artesanías en el Pasaje Cóndor Paccha de Río Verde"},
+        {"src":"assets/photos/condor-paccha/condor-paccha-rio-verde-05.webp","alt":"Artesano junto a su puesto en el Pasaje Cóndor Paccha"}
+      ],
       "sources":[{"label":"Tungurahua Turismo","url":"https://tungurahuaturismo.com/es-ec/tungurahua/banos-de-agua-santa/gestores-artesanales/arte-nery-adsrjpepm"}]
     },
     {
