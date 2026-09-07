@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap');
 /* Atlas Vivo · Soy Tungurahua */
 :root{--night:#101522;--night2:#201932;--paper:#f7f0e3;--white:#fffdf8;--ink:#18211c;--muted:#5f685f;--line:rgba(24,33,28,.16);--sulfur:#e8f54a;--thermal:#ff6846;--river:#62d9e8;--paramo:#2f8f5b;--shadow:0 24px 70px rgba(16,21,34,.16)}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -198,3 +199,12 @@ body[class^="atlas-"] header .nav-actions,body[class^="atlas-"] header .navlinks
   .atlas-routes .jump .canton{flex-basis:84vw}
 }
 
+
+
+/* Identidad tipográfica 2026 — Soy Tungurahua */
+body[class^="atlas-"]{font-family:'Manrope',ui-sans-serif,system-ui,sans-serif}
+body[class^="atlas-"] h1,body[class^="atlas-"] h2,body[class^="atlas-"] h3{font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif}
+body[class^="atlas-"] .brand-logo{content:url('logo-header.svg')}
+body[class^="atlas-"] header .brand{background:var(--white);padding:6px 10px;border-radius:15px;box-shadow:0 7px 20px rgba(0,0,0,.18)}
+body[class^="atlas-"] header .brand-logo{width:176px;max-width:176px;max-height:42px;filter:none}
+@media(max-width:620px){body[class^="atlas-"] header .brand-logo{width:148px;max-width:148px;max-height:36px}}
