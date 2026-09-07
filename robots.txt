@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://soytungurahua.com/sitemap.xml
+Sitemap: https://soytungurahua.com/sitemap-entidades.xml
