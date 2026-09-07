@@ -74,3 +74,127 @@ body[class^="atlas-"] footer{background:#090d15;color:#fff;border-top:6px solid 
 @media(max-width:820px){.atlas-home .hero-grid,.atlas-entity .grid{grid-template-columns:1fr}.atlas-home .hero{padding-top:42px}.atlas-home .hero h1,.atlas-routes .hero h1,.atlas-explore .hero h1{font-size:clamp(3.45rem,16vw,6rem)}.atlas-home .visual-column{margin-top:24px}.atlas-home .carousel,.atlas-home .carousel img{min-height:350px}.atlas-home .hero-logo{left:10px;top:-18px;width:118px}.atlas-home .pickers{grid-template-columns:1fr}.atlas-home .quick{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-home .quick .card:nth-child(2n),.atlas-home .quick .card:nth-child(2n):hover{transform:none}.atlas-explore .results{grid-template-columns:1fr}}
 @media(max-width:620px){.atlas-home .container,.atlas-explore .container,.atlas-entity .container,.atlas-routes .wrap{width:min(100% - 24px,1220px)}body[class^="atlas-"] .nav{min-height:68px}body[class^="atlas-"] .brand-logo{width:150px}.atlas-home .hero h1{font-size:clamp(3.35rem,18vw,5.2rem)}.atlas-home .carousel,.atlas-home .carousel img{min-height:300px}.atlas-home .quick,.atlas-home .cantons,.atlas-explore .cantons{grid-template-columns:1fr}.atlas-home .card,.atlas-home .canton{min-height:auto}.atlas-home .semantic-search,.atlas-explore .searchbox{display:grid;grid-template-columns:1fr;padding:7px}.atlas-home .semantic-search button,.atlas-explore .searchbox button{width:100%}.atlas-routes .choice:nth-child(2){transform:none}.atlas-field-note{grid-template-columns:1fr;align-items:start}.atlas-field-note span{width:max-content}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Refinamiento visual · equilibrio museográfico */
+body[class^="atlas-"] header .brand{
+  flex:0 0 auto;width:auto;height:54px;padding:6px 10px;border-radius:16px;
+  background:var(--white);box-shadow:0 8px 22px rgba(0,0,0,.2)
+}
+body[class^="atlas-"] header .brand-logo{
+  display:block;width:176px;max-width:176px;height:auto;max-height:40px;object-fit:contain;filter:none
+}
+body[class^="atlas-"] header .nav{gap:20px}
+body[class^="atlas-"] header .nav-actions,body[class^="atlas-"] header .navlinks{gap:7px}
+.atlas-home header .navlink[href="artistas.html"],
+.atlas-home header .navlink[href="artesanos.html"],
+.atlas-home header .navlink[href="catastro.html"],
+.atlas-home header .navlink[href="metodologia.html"],
+.atlas-home header .navlink[href="gobernanza.html"],
+.atlas-explore header .navlink[href="artistas.html"],
+.atlas-explore header .navlink[href="artesanos.html"],
+.atlas-explore header .navlink[href="metodologia.html"],
+.atlas-explore header .navlink[href="gobernanza.html"]{display:none}
+.atlas-home .hero h1{font-size:clamp(3.8rem,7.5vw,7.25rem);line-height:.86}
+.atlas-home .hero-grid{grid-template-columns:minmax(0,1fr) minmax(360px,1fr)}
+.atlas-home .hero-logo{display:none}
+.atlas-home .carousel{min-height:400px;border-radius:30px;transform:none}
+.atlas-home .carousel img{min-height:400px}
+.atlas-home .territory-note{transform:none;border-radius:16px}
+.atlas-home .hero .btn{white-space:nowrap}
+.atlas-home .semantic{padding:clamp(58px,8vw,96px) 0;background:var(--paper)}
+.atlas-home .semantic-box{
+  padding:clamp(32px,6vw,68px);border-radius:38px;color:#fff;
+  background:radial-gradient(circle at 90% 10%,rgba(98,217,232,.18),transparent 24%),var(--night);
+  box-shadow:var(--shadow)
+}
+.atlas-home .semantic-box .eyebrow{color:var(--sulfur)}
+.atlas-home .semantic-box h2{max-width:840px;color:#fff;font-size:clamp(2.7rem,5vw,5rem)}
+.atlas-home .semantic-box p{color:#dce5df}
+.atlas-home .semantic-search{border-color:#fff}
+.atlas-home .semantic-search button{background:var(--thermal);color:#fff}
+.atlas-home .semantic-chips a{color:#fff;border-color:rgba(255,255,255,.25)}
+.atlas-home .semantic-chips a:hover{background:var(--sulfur);color:var(--night);border-color:var(--sulfur)}
+.atlas-home .quick{grid-template-columns:repeat(5,minmax(0,1fr))}
+.atlas-home .quick .card{background:var(--white)!important;border-top:5px solid var(--paramo)}
+.atlas-home .quick .card:nth-child(2){border-top-color:var(--river)}
+.atlas-home .quick .card:nth-child(3){border-top-color:var(--sulfur)}
+.atlas-home .quick .card:nth-child(4){border-top-color:var(--thermal)}
+.atlas-home .quick .card:nth-child(5){border-top-color:#7567d8}
+.atlas-home .quick .card:nth-child(2n),.atlas-home .quick .card:nth-child(2n):hover{transform:none}
+.atlas-home .head h2{font-size:clamp(2.8rem,5.7vw,5.6rem);line-height:.92}
+.atlas-home .dark .head p{color:#d4ddd7}
+.atlas-home .mapsec{background:#dff4f2}
+.atlas-home .joinbox .btn{width:auto!important;display:inline-flex!important;margin-right:8px}
+.atlas-home .joinbox .btn.light{background:#fff;color:var(--night);border-color:#fff}
+.atlas-home .joinbox .micro{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.atlas-home .joinbox .micro>div{
+  min-height:110px;padding:18px;border-radius:20px;
+  background:rgba(255,255,255,.11)!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.22)!important
+}
+.atlas-home .joinbox .micro b{color:#fff}.atlas-home .joinbox .micro span{color:#e4eee8}
+
+/* Qué hacer: menos afiche, más guía de campo */
+.atlas-routes .navlinks a{
+  background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.2)!important
+}
+.atlas-routes .navlinks a.active{
+  background:var(--sulfur)!important;color:var(--night)!important;border-color:var(--sulfur)!important
+}
+.atlas-routes .hero{
+  color:var(--night);background:
+  radial-gradient(circle at 90% 12%,rgba(255,104,70,.28),transparent 25%),
+  repeating-radial-gradient(ellipse at 88% 20%,transparent 0 31px,rgba(16,21,34,.055) 32px 33px),
+  var(--paper);box-shadow:inset 12px 0 var(--thermal)
+}
+.atlas-routes .hero::after{color:rgba(255,104,70,.08)}
+.atlas-routes .hero .eyebrow{color:#b7361d}
+.atlas-routes .hero h1{font-size:clamp(3.8rem,8vw,7.4rem);line-height:.86;max-width:1050px}
+.atlas-routes .hero>div>p{color:#3d473f}
+.atlas-routes .atlas-field-note{background:#fff;border-color:rgba(16,21,34,.25)}
+.atlas-routes .jump{position:relative!important;top:auto!important;padding:12px 0}
+.atlas-routes .jump .wrap{overflow:hidden}
+.atlas-routes .jump .cantons{
+  display:flex!important;grid-template-columns:none!important;overflow-x:auto;gap:8px;
+  padding:2px 0 8px;scrollbar-width:thin;scrollbar-color:var(--thermal) rgba(255,255,255,.08)
+}
+.atlas-routes .jump .canton{flex:0 0 min(270px,82vw);min-height:96px}
+.atlas-routes .route-head h2{font-size:clamp(2.8rem,5.5vw,5.2rem);line-height:.92}
+.atlas-routes .mood{
+  color:var(--night);background:var(--white);border-top:12px solid var(--sulfur)
+}
+.atlas-routes .mood h2{font-size:clamp(2.8rem,5.3vw,5rem)}
+.atlas-routes .choice{background:var(--paper)}
+.atlas-routes .choice:nth-child(2){background:var(--sulfur);transform:none}
+.atlas-routes .tourism-hub{background:#dff4f2}
+.atlas-routes .tourism-hub h2,.atlas-routes .collab h2{font-size:clamp(2.6rem,4.8vw,4.6rem);line-height:.94}
+.atlas-routes .tourism-hub-box{padding:clamp(28px,5vw,58px)}
+
+/* Explorar y fichas: contenido antes que gigantismo */
+.atlas-explore .hero h1{font-size:clamp(3.7rem,7vw,6.4rem);line-height:.88;max-width:940px}
+.atlas-explore .head h2{font-size:clamp(2.8rem,5.5vw,5.2rem);line-height:.92}
+.atlas-entity .hero{padding:clamp(42px,6vw,68px) 0 48px}
+.atlas-entity .hero h1{
+  max-width:1050px;font-size:clamp(2.9rem,5.8vw,5.55rem);line-height:.93;
+  overflow-wrap:anywhere
+}
+.atlas-entity .panel h2{font-size:clamp(1.9rem,3vw,3rem);line-height:1}
+@media(max-width:820px){
+  body[class^="atlas-"] header .brand{height:48px;padding:5px 8px}
+  body[class^="atlas-"] header .brand-logo{width:148px;max-width:148px;max-height:36px}
+  .atlas-home .hero-grid{grid-template-columns:1fr}
+  .atlas-home .carousel,.atlas-home .carousel img{min-height:330px}
+  .atlas-home .quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .atlas-home .joinbox .micro{grid-template-columns:1fr}
+  .atlas-routes .hero h1,.atlas-explore .hero h1{font-size:clamp(3.1rem,13vw,5.2rem)}
+  .atlas-entity .hero h1{font-size:clamp(2.65rem,11vw,4.6rem)}
+}
+@media(max-width:620px){
+  body[class^="atlas-"] header .nav{gap:10px}
+  .atlas-home .semantic-box{padding:28px 20px;border-radius:28px}
+  .atlas-home .quick{grid-template-columns:1fr}
+  .atlas-home .joinbox .btn{width:100%!important;justify-content:center;margin:0 0 8px}
+  .atlas-routes .hero{box-shadow:inset 7px 0 var(--thermal)}
+  .atlas-routes .jump .canton{flex-basis:84vw}
+}
+
