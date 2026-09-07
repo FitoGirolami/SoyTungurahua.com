@@ -7,6 +7,7 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 ## Principales recursos
 - Inicio: https://soytungurahua.com/
 - Explorador semántico: https://soytungurahua.com/explorar.html
+- Pasaporte cultural: https://soytungurahua.com/pasaporte.html
 - Cantones y fichas territoriales: https://soytungurahua.com/cantones/
 - Solicitud abierta de incorporación: https://soytungurahua.com/sumate.html
 - Ficha territorial: https://soytungurahua.com/entidad.html?id=AMB-001
@@ -16,6 +17,11 @@ Propósito: conectar turismo consciente, cultura, historia, naturaleza, oficios,
 - Radio: https://soytungurahua.com/radio.html
 - Catastro territorial: https://soytungurahua.com/catastro.html
 - Grafo de conocimiento: https://soytungurahua.com/data/knowledge-graph.json
+
+## Pasaporte cultural
+El Pasaporte cultural es una herramienta personal y local que permite guardar en el dispositivo del visitante los audios escuchados y lugares visitados, y utilizar esas huellas para sugerir una próxima ruta o tema relacionado.
+
+No requiere cuenta y no envía el historial a Soy Tungurahua. La recomendación se calcula en el dispositivo a partir de las categorías y relaciones disponibles. El motor expone una API local `SoyTungurahuaPassport.markAudio()` y `SoyTungurahuaPassport.markVisited()` para que las futuras audioguías y fichas puedan registrar una escucha o visita de forma explícita.
 
 ## Cobertura territorial
 Ambato, Baños de Agua Santa, Cevallos, Mocha, Patate, San Pedro de Pelileo, Santiago de Píllaro, Quero y Tisaleo.
