@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://soytungurahua.com/</loc><lastmod>2026-09-07</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://soytungurahua.com/</loc><lastmod>2026-10-28</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://soytungurahua.com/explorar.html</loc><lastmod>2026-09-07</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
   <url><loc>https://soytungurahua.com/que-hacer.html</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://soytungurahua.com/pasaporte.html</loc><lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.93</priority></url>
@@ -13,4 +13,5 @@
   <url><loc>https://soytungurahua.com/gobernanza.html</loc><lastmod>2026-08-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://soytungurahua.com/metodologia.html</loc><lastmod>2026-08-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://soytungurahua.com/licencia-datos.html</loc><lastmod>2026-08-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://soytungurahua.com/sumate.html</loc><lastmod>2026-08-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>
